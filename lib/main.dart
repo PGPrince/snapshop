@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:snapshop/core/feature/onboarding/screens/onbaording_screen.dart';
-import 'package:snapshop/core/feature/onboarding/screens/onboarding_screen_one.dart';
-import 'package:snapshop/core/feature/onboarding/screens/onboarding_screen_three.dart';
-import 'package:snapshop/core/feature/onboarding/screens/onboarding_screen_two.dart';
-import 'package:snapshop/core/feature/splash/screens/splash_screen.dart';
+import 'package:snapshop/core/feature/auth/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +22,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             colorScheme: .fromSeed(seedColor: Colors.deepPurple),
           ),
-          home: OnboardingScreen(),
+          home: LoginScreen(),
         );
       },
     );
