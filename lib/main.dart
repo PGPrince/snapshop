@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:snapshop/core/feature/onboarding/screens/onboarding_one.dart';
 import 'package:snapshop/core/feature/splash/screens/splash_screen.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(360, 690),
+      designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             colorScheme: .fromSeed(seedColor: Colors.deepPurple),
           ),
-          home: SplashScreen(),
+          home: OnboardingOne(),
         );
       },
     );

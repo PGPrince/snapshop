@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:snapshop/core/constants/app_color.dart';
+import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -19,7 +19,7 @@ class SplashScreen extends StatelessWidget {
               width: 90.w,
               height: 90.h,
               decoration: BoxDecoration(
-                color: AppColor.KBlack,
+                color: AppColors.kBlack,
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Image.asset(
