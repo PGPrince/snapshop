@@ -6,4 +6,10 @@ class AppColors {
 
   //White Color
   static const Color kWhite = Colors.white;
+
+  //Grey Color
+  static const Color kGrey = Colors.grey;
+
+  //Light Grey Color
+  static const Color kLightGrey = Color(0xFFE6E6E6);
 }
