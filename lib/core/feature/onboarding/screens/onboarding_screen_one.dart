@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:snapshop/core/common_widgets/button/custom_button.dart';
+import 'package:snapshop/core/common_widgets/dot_indicator/custom_do_indicator.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
 
@@ -26,7 +27,11 @@ class OnboardingScreenOneState extends State<OnboardingScreenOne> {
               'assets/images/onboarding/onboarding1.png',
               fit: BoxFit.cover,
             ),
-
+            Positioned(
+              top: 20,
+              left: 20,
+              child: CustomDotIndicator(count: 3, currentIndex: 1),
+            ),
             // Foreground content
             Positioned(
               left: 24.w,
