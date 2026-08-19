@@ -4,14 +4,14 @@ import 'package:snapshop/core/common_widgets/button/custom_button.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
 
-class OnboardingOne extends StatefulWidget {
-  const OnboardingOne({super.key});
+class OnboardingScreenOne extends StatefulWidget {
+  const OnboardingScreenOne({super.key});
 
   @override
-  State<OnboardingOne> createState() => OnboardingOneState();
+  State<OnboardingScreenOne> createState() => OnboardingScreenOneState();
 }
 
-class OnboardingOneState extends State<OnboardingOne> {
+class OnboardingScreenOneState extends State<OnboardingScreenOne> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
