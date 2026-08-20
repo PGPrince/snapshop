@@ -134,8 +134,7 @@ class LoginScreenState extends State<LoginScreen> {
               children: [
                 CustomRoundButton(
                   asset: 'assets/images/button_icon/facebook.png',
-                  width: 24,
-                  height: 24,
+
                   title: 'Continue with facebook',
                   textStyle: AppTextstyle.interSemiBold.copyWith(
                     color: AppColors.kDarkGrey,
@@ -148,8 +147,7 @@ class LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: 20.h),
                 CustomRoundButton(
                   asset: 'assets/images/button_icon/google.png',
-                  width: 24,
-                  height: 24,
+
                   title: 'Continue with google',
                   textStyle: AppTextstyle.interSemiBold.copyWith(
                     color: AppColors.kDarkGrey,

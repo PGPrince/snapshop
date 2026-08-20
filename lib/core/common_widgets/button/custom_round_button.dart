@@ -7,8 +7,8 @@ class CustomRoundButton extends StatelessWidget {
   final String title;
   final TextStyle textStyle;
   final double radius;
-  final double? width;
-  final double? height;
+  final double? iconWidth;
+  final double? iconHeight;
 
   const CustomRoundButton({
     super.key,
@@ -16,8 +16,8 @@ class CustomRoundButton extends StatelessWidget {
     required this.title,
     required this.textStyle,
     required this.radius,
-    this.width,
-    this.height,
+    this.iconWidth,
+    this.iconHeight,
   });
 
   @override
@@ -25,17 +25,22 @@ class CustomRoundButton extends StatelessWidget {
     return Container(
       width: 343.w,
       height: 52.h,
-      padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 14.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(radius),
         border: Border.all(color: AppColors.kGrey, width: 1),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: Stack(
+        alignment: Alignment.center,
         children: [
-          Image.asset(asset, width: width, height: height),
-          SizedBox(width: 10),
-          Text(title, style: textStyle),
+          Positioned(
+            left: 20.w,
+            child: Image.asset(
+              asset,
+              width: iconWidth ?? 24,
+              height: iconHeight ?? 24,
+            ),
+          ),
+          Center(child: Text(title, style: textStyle)),
         ],
       ),
     );
