@@ -39,7 +39,7 @@ class OnboardingScreenTwo extends StatelessWidget {
                 Text(
                   'Order your Style',
                   textAlign: TextAlign.center,
-                  style: AppTextstyle.inteBold.copyWith(
+                  style: AppTextstyle.interBold.copyWith(
                     color: AppColors.kWhite,
                     fontSize: 32.sp,
                     height: 1.3,

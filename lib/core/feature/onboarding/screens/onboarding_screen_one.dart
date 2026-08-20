@@ -48,7 +48,7 @@ class OnboardingScreenOne extends StatelessWidget {
                 Text(
                   'Discover Our New',
                   textAlign: TextAlign.center,
-                  style: AppTextstyle.inteBold.copyWith(
+                  style: AppTextstyle.interBold.copyWith(
                     color: AppColors.kWhite,
                     fontSize: 32.sp,
                     height: 1.3,
@@ -59,7 +59,7 @@ class OnboardingScreenOne extends StatelessWidget {
                 Text(
                   'Collection',
                   textAlign: TextAlign.center,
-                  style: AppTextstyle.inteBold.copyWith(
+                  style: AppTextstyle.interBold.copyWith(
                     color: AppColors.kWhite,
                     fontSize: 32.sp,
                     height: 1.3,

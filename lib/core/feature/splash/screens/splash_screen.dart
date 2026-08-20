@@ -32,7 +32,7 @@ class SplashScreen extends StatelessWidget {
           SizedBox(height: 10.h),
           Text(
             'SnapShop',
-            style: AppTextstyle.inteBold.copyWith(
+            style: AppTextstyle.interBold.copyWith(
               fontSize: 20.sp,
               letterSpacing: 0.68.w,
               height: 0.9,

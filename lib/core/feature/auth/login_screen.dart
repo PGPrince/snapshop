@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:snapshop/core/common_widgets/button/custom_button.dart';
+import 'package:snapshop/core/common_widgets/button/custom_round_button.dart';
 import 'package:snapshop/core/common_widgets/button/custom_text_button.dart';
 import 'package:snapshop/core/common_widgets/text_field/custom_text_field.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
@@ -26,7 +28,7 @@ class LoginScreenState extends State<LoginScreen> {
           children: [
             Text(
               'Welcome back!',
-              style: AppTextstyle.inteBold.copyWith(
+              style: AppTextstyle.interBold.copyWith(
                 fontSize: 32.sp,
                 height: 1.3.h,
                 letterSpacing: -0.64,
@@ -35,7 +37,7 @@ class LoginScreenState extends State<LoginScreen> {
             SizedBox(height: 10),
             Text(
               'Sign In ',
-              style: AppTextstyle.inteBold.copyWith(
+              style: AppTextstyle.interBold.copyWith(
                 fontSize: 32.sp,
                 height: 1.3.h,
                 letterSpacing: -0.64,
@@ -74,11 +76,26 @@ class LoginScreenState extends State<LoginScreen> {
                   height: 1.5.h,
                   color: AppColors.kBlack,
                 ),
+
                 onPressed: () {},
               ),
             ),
+            SizedBox(height: 20.h),
+            CustomButton(
+              width: 343.w,
+              height: 56.h,
+              onPressed: () {},
+              title: 'Sign In',
+              textStyle: AppTextstyle.interSemiBold.copyWith(
+                fontSize: 16,
+                height: 1.5,
+                letterSpacing: 0.3,
+              ),
+              bgColor: AppColors.kBlack,
+              fgColor: AppColors.kWhite,
+            ),
 
-            SizedBox(height: 10.h),
+            SizedBox(height: 20.h),
 
             Row(
               children: [
@@ -105,6 +122,69 @@ class LoginScreenState extends State<LoginScreen> {
                       color: AppColors.kGrey,
                       thickness: 1.h,
                       height: 1.h,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 20.h),
+
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                CustomRoundButton(
+                  asset: 'assets/images/button_icon/facebook.png',
+                  width: 24,
+                  height: 24,
+                  title: 'Continue with facebook',
+                  textStyle: AppTextstyle.interSemiBold.copyWith(
+                    color: AppColors.kDarkGrey,
+                    fontSize: 14.sp,
+                    height: 1.5.h,
+                    letterSpacing: 0.3,
+                  ),
+                  radius: 24,
+                ),
+                SizedBox(height: 20.h),
+                CustomRoundButton(
+                  asset: 'assets/images/button_icon/google.png',
+                  width: 24,
+                  height: 24,
+                  title: 'Continue with google',
+                  textStyle: AppTextstyle.interSemiBold.copyWith(
+                    color: AppColors.kDarkGrey,
+                    fontSize: 14.sp,
+                    height: 1.5.h,
+                    letterSpacing: 0.3,
+                  ),
+                  radius: 24,
+                ),
+              ],
+            ),
+
+            SizedBox(height: 20.h),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Don't have an account ?",
+                  style: AppTextstyle.interRegular.copyWith(
+                    color: AppColors.kGrey,
+                    fontSize: 14,
+                    height: 1.5,
+                    letterSpacing: 0.3,
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Sign Up',
+                    style: AppTextstyle.interBold.copyWith(
+                      color: AppColors.kBlack,
+                      fontSize: 14,
+                      height: 1.5,
+                      letterSpacing: 0.3,
                     ),
                   ),
                 ),

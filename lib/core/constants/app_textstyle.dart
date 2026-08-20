@@ -17,7 +17,7 @@ class AppTextstyle {
     fontWeight: FontWeight.w600,
   );
 
-  static const TextStyle inteBold = TextStyle(
+  static const TextStyle interBold = TextStyle(
     fontFamily: 'Inter',
     fontWeight: FontWeight.w700,
   );
