@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:snapshop/core/feature/auth/forgot_password_screen.dart';
 import 'package:snapshop/core/feature/auth/login_screen.dart';
 import 'package:snapshop/core/feature/auth/new_password_screen.dart';
 import 'package:snapshop/core/feature/auth/sign_up_screen.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             colorScheme: .fromSeed(seedColor: Colors.deepPurple),
           ),
-          home: VerifyPhoneNumberScreen(),
+          home: ForgotPasswordScreen(),
         );
       },
     );
