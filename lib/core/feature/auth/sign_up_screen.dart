@@ -191,7 +191,7 @@ class SignUpScreenState extends State<SignUpScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Don't have an account ?",
+                    "Already have an account ?",
                     style: AppTextstyle.interRegular.copyWith(
                       color: AppColors.kGrey,
                       fontSize: 14,
@@ -202,7 +202,7 @@ class SignUpScreenState extends State<SignUpScreen> {
                   TextButton(
                     onPressed: () {},
                     child: Text(
-                      'Sign Up',
+                      'Sign In',
                       style: AppTextstyle.interBold.copyWith(
                         color: AppColors.kBlack,
                         fontSize: 14,
