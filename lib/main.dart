@@ -4,6 +4,7 @@ import 'package:snapshop/core/feature/auth/login_screen.dart';
 import 'package:snapshop/core/feature/auth/new_password_screen.dart';
 import 'package:snapshop/core/feature/auth/sign_up_screen.dart';
 import 'package:snapshop/core/feature/auth/success_screen.dart';
+import 'package:snapshop/core/feature/auth/verify_phone_number_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             colorScheme: .fromSeed(seedColor: Colors.deepPurple),
           ),
-          home: NewPasswordScreen(),
+          home: VerifyPhoneNumberScreen(),
         );
       },
     );
