@@ -22,173 +22,175 @@ class LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Welcome back!',
-              style: AppTextstyle.interBold.copyWith(
-                fontSize: 32.sp,
-                height: 1.3.h,
-                letterSpacing: -0.64,
-              ),
-            ),
-            SizedBox(height: 10),
-            Text(
-              'Sign In ',
-              style: AppTextstyle.interBold.copyWith(
-                fontSize: 32.sp,
-                height: 1.3.h,
-                letterSpacing: -0.64,
-              ),
-            ),
-
-            SizedBox(height: 20.h),
-
-            CustomTextField(title: 'Email', radius: 16.r),
-
-            SizedBox(height: 16.h),
-
-            CustomTextField(
-              obscureText: _obscureText,
-              title: 'Password',
-              radius: 16.r,
-              suffixIcon: IconButton(
-                onPressed: () {
-                  setState(() {
-                    _obscureText = !_obscureText;
-                  });
-                },
-                icon: _obscureText
-                    ? Icon(Icons.visibility_off_outlined)
-                    : Icon(Icons.visibility_outlined),
-              ),
-            ),
-            SizedBox(height: 10.h),
-            Align(
-              alignment: Alignment.centerRight,
-              child: CustomTextButton(
-                title: 'Forget Password?',
-                textStyle: AppTextstyle.interMedium.copyWith(
-                  fontSize: 14.sp,
-                  letterSpacing: 0.3,
-                  height: 1.5.h,
-                  color: AppColors.kBlack,
+        child: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Welcome back!',
+                style: AppTextstyle.interBold.copyWith(
+                  fontSize: 32.sp,
+                  height: 1.3.h,
+                  letterSpacing: -0.64,
                 ),
-
-                onPressed: () {},
               ),
-            ),
-            SizedBox(height: 20.h),
-            CustomButton(
-              width: 343.w,
-              height: 56.h,
-              onPressed: () {},
-              title: 'Sign In',
-              textStyle: AppTextstyle.interSemiBold.copyWith(
-                fontSize: 16,
-                height: 1.5,
-                letterSpacing: 0.3,
+              SizedBox(height: 10),
+              Text(
+                'Sign In ',
+                style: AppTextstyle.interBold.copyWith(
+                  fontSize: 32.sp,
+                  height: 1.3.h,
+                  letterSpacing: -0.64,
+                ),
               ),
-              bgColor: AppColors.kBlack,
-              fgColor: AppColors.kWhite,
-            ),
 
-            SizedBox(height: 20.h),
+              SizedBox(height: 20.h),
 
-            Row(
-              children: [
-                Expanded(
-                  child: SizedBox(
-                    width: 150.w,
-                    child: Divider(
-                      color: AppColors.kGrey,
-                      thickness: 1.h,
-                      height: 1.h,
-                    ),
-                  ),
+              CustomTextField(title: 'Email', radius: 16.r),
+
+              SizedBox(height: 16.h),
+
+              CustomTextField(
+                obscureText: _obscureText,
+                title: 'Password',
+                radius: 16.r,
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      _obscureText = !_obscureText;
+                    });
+                  },
+                  icon: _obscureText
+                      ? Icon(Icons.visibility_off_outlined)
+                      : Icon(Icons.visibility_outlined),
                 ),
-                SizedBox(width: 10.w),
-                Text(
-                  'Or',
-                  style: AppTextstyle.interMedium.copyWith(fontSize: 14.sp),
-                ),
-                SizedBox(width: 10.w),
-                Expanded(
-                  child: SizedBox(
-                    width: 150.w,
-                    child: Divider(
-                      color: AppColors.kGrey,
-                      thickness: 1.h,
-                      height: 1.h,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 20.h),
-
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                CustomRoundButton(
-                  asset: 'assets/images/button_icon/facebook.png',
-
-                  title: 'Continue with facebook',
-                  textStyle: AppTextstyle.interSemiBold.copyWith(
-                    color: AppColors.kDarkGrey,
+              ),
+              SizedBox(height: 10.h),
+              Align(
+                alignment: Alignment.centerRight,
+                child: CustomTextButton(
+                  title: 'Forget Password?',
+                  textStyle: AppTextstyle.interMedium.copyWith(
                     fontSize: 14.sp,
+                    letterSpacing: 0.3,
                     height: 1.5.h,
-                    letterSpacing: 0.3,
+                    color: AppColors.kBlack,
                   ),
-                  radius: 24,
-                ),
-                SizedBox(height: 20.h),
-                CustomRoundButton(
-                  asset: 'assets/images/button_icon/google.png',
 
-                  title: 'Continue with google',
-                  textStyle: AppTextstyle.interSemiBold.copyWith(
-                    color: AppColors.kDarkGrey,
-                    fontSize: 14.sp,
-                    height: 1.5.h,
-                    letterSpacing: 0.3,
-                  ),
-                  radius: 24,
-                ),
-              ],
-            ),
-
-            SizedBox(height: 20.h),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Don't have an account ?",
-                  style: AppTextstyle.interRegular.copyWith(
-                    color: AppColors.kGrey,
-                    fontSize: 14,
-                    height: 1.5,
-                    letterSpacing: 0.3,
-                  ),
-                ),
-                TextButton(
                   onPressed: () {},
-                  child: Text(
-                    'Sign Up',
-                    style: AppTextstyle.interBold.copyWith(
-                      color: AppColors.kBlack,
+                ),
+              ),
+              SizedBox(height: 20.h),
+              CustomButton(
+                width: 343.w,
+                height: 56.h,
+                onPressed: () {},
+                title: 'Sign In',
+                textStyle: AppTextstyle.interSemiBold.copyWith(
+                  fontSize: 16,
+                  height: 1.5,
+                  letterSpacing: 0.3,
+                ),
+                bgColor: AppColors.kBlack,
+                fgColor: AppColors.kWhite,
+              ),
+
+              SizedBox(height: 20.h),
+
+              Row(
+                children: [
+                  Expanded(
+                    child: SizedBox(
+                      width: 150.w,
+                      child: Divider(
+                        color: AppColors.kGrey,
+                        thickness: 1.h,
+                        height: 1.h,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 10.w),
+                  Text(
+                    'Or',
+                    style: AppTextstyle.interMedium.copyWith(fontSize: 14.sp),
+                  ),
+                  SizedBox(width: 10.w),
+                  Expanded(
+                    child: SizedBox(
+                      width: 150.w,
+                      child: Divider(
+                        color: AppColors.kGrey,
+                        thickness: 1.h,
+                        height: 1.h,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20.h),
+
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  CustomRoundButton(
+                    asset: 'assets/images/button_icon/facebook.png',
+
+                    title: 'Continue with facebook',
+                    textStyle: AppTextstyle.interSemiBold.copyWith(
+                      color: AppColors.kDarkGrey,
+                      fontSize: 14.sp,
+                      height: 1.5.h,
+                      letterSpacing: 0.3,
+                    ),
+                    radius: 24,
+                  ),
+                  SizedBox(height: 20.h),
+                  CustomRoundButton(
+                    asset: 'assets/images/button_icon/google.png',
+
+                    title: 'Continue with google',
+                    textStyle: AppTextstyle.interSemiBold.copyWith(
+                      color: AppColors.kDarkGrey,
+                      fontSize: 14.sp,
+                      height: 1.5.h,
+                      letterSpacing: 0.3,
+                    ),
+                    radius: 24,
+                  ),
+                ],
+              ),
+
+              SizedBox(height: 20.h),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Don't have an account ?",
+                    style: AppTextstyle.interRegular.copyWith(
+                      color: AppColors.kGrey,
                       fontSize: 14,
                       height: 1.5,
                       letterSpacing: 0.3,
                     ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Sign Up',
+                      style: AppTextstyle.interBold.copyWith(
+                        color: AppColors.kBlack,
+                        fontSize: 14,
+                        height: 1.5,
+                        letterSpacing: 0.3,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
