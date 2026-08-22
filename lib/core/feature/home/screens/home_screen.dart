@@ -45,7 +45,7 @@ class HomeScreenState extends State<HomeScreen> {
               child: Row(
                 children: [
                   CustomCategoryFilter(
-                    width: 56.w,
+                    width: 58.w,
                     height: 38.h,
                     title: 'All',
                     textStyle: AppTextstyle.interSemiBold.copyWith(
