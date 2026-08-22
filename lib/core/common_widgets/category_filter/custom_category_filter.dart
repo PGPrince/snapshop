@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:snapshop/core/constants/app_colors.dart';
 
 class CustomCategoryFilter extends StatelessWidget {
   final double? width;
@@ -7,6 +8,9 @@ class CustomCategoryFilter extends StatelessWidget {
   final String title;
   final TextStyle textStyle;
   final VoidCallback onTap;
+  final Color? backgroundColor;
+  final Color? borderColor;
+  final bool isSelected;
   const CustomCategoryFilter({
     super.key,
     required this.title,
@@ -14,6 +18,9 @@ class CustomCategoryFilter extends StatelessWidget {
     required this.onTap,
     this.width,
     this.height,
+    this.backgroundColor,
+    this.borderColor,
+    this.isSelected = false,
   });
 
   @override
@@ -25,7 +32,8 @@ class CustomCategoryFilter extends StatelessWidget {
         height: height,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(width: 1.w),
+          border: Border.all(width: 1.w, color: borderColor ?? AppColors.kGrey),
+          color: backgroundColor ?? AppColors.kWhite,
         ),
         child: Center(
           child: Padding(
