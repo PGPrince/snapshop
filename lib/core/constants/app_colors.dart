@@ -15,4 +15,6 @@ class AppColors {
 
   // Dark Color
   static const kDarkGrey = Color(0xFF4A4A4A);
+
+  static const kWarmCream = Color(0xFFFFEFE3);
 }
