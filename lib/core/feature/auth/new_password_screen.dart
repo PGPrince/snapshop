@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:snapshop/core/common_widgets/button/custom_button.dart';
-import 'package:snapshop/core/common_widgets/button/custom_icon_button.dart';
+import 'package:snapshop/core/common_widgets/buttons/custom_button.dart';
+import 'package:snapshop/core/common_widgets/buttons/custom_icon_button.dart';
 import 'package:snapshop/core/common_widgets/text_field/custom_text_field.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
