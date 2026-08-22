@@ -13,6 +13,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class HomeScreenState extends State<HomeScreen> {
+  String selectedCategory = 'All';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,91 +47,183 @@ class HomeScreenState extends State<HomeScreen> {
               child: Row(
                 children: [
                   CustomCategoryFilter(
-                    onTap: () {},
+                    onTap: () {
+                      setState(() {
+                        selectedCategory = 'All';
+                      });
+                    },
                     width: 58.w,
                     height: 38.h,
                     title: 'All',
+                    backgroundColor: selectedCategory == 'All'
+                        ? AppColors.kBlack
+                        : AppColors.kLightGrey,
+                    borderColor: selectedCategory == 'All'
+                        ? AppColors.kBlack
+                        : AppColors.kLightGrey,
                     textStyle: AppTextstyle.interSemiBold.copyWith(
                       fontSize: 12.sp,
                       height: 1.5,
                       letterSpacing: 0.3,
+                      color: selectedCategory == 'All'
+                          ? AppColors.kWhite
+                          : AppColors.kGrey,
                     ),
                   ),
                   SizedBox(width: 10.w),
                   CustomCategoryFilter(
-                    onTap: () {},
+                    onTap: () {
+                      setState(() {
+                        selectedCategory = 'Woman';
+                      });
+                    },
                     width: 88.w,
                     height: 38.h,
                     title: 'Woman',
+                    backgroundColor: selectedCategory == 'Woman'
+                        ? AppColors.kBlack
+                        : AppColors.kLightGrey,
+                    borderColor: selectedCategory == 'Woman'
+                        ? AppColors.kBlack
+                        : AppColors.kLightGrey,
                     textStyle: AppTextstyle.interSemiBold.copyWith(
                       fontSize: 12.sp,
                       height: 1.5,
                       letterSpacing: 0.3,
+                      color: selectedCategory == 'Woman'
+                          ? AppColors.kWhite
+                          : AppColors.kGrey,
                     ),
                   ),
                   SizedBox(width: 10.w),
                   CustomCategoryFilter(
-                    onTap: () {},
+                    onTap: () {
+                      setState(() {
+                        selectedCategory = 'Man';
+                      });
+                    },
                     width: 68.w,
                     height: 38.h,
                     title: 'Man',
+                    backgroundColor: selectedCategory == 'Man'
+                        ? AppColors.kBlack
+                        : AppColors.kLightGrey,
+
+                    borderColor: selectedCategory == 'Man'
+                        ? AppColors.kBlack
+                        : AppColors.kLightGrey,
                     textStyle: AppTextstyle.interSemiBold.copyWith(
                       fontSize: 12.sp,
                       height: 1.5,
                       letterSpacing: 0.3,
+                      color: selectedCategory == 'Man'
+                          ? AppColors.kWhite
+                          : AppColors.kGrey,
                     ),
                   ),
                   SizedBox(width: 10.w),
 
                   SizedBox(width: 10.w),
                   CustomCategoryFilter(
-                    onTap: () {},
+                    onTap: () {
+                      setState(() {
+                        selectedCategory = 'Kids';
+                      });
+                    },
                     width: 69.w,
                     height: 38.h,
                     title: 'Kids',
+                    backgroundColor: selectedCategory == 'Kids'
+                        ? AppColors.kBlack
+                        : AppColors.kLightGrey,
+                    borderColor: selectedCategory == 'Kids'
+                        ? AppColors.kBlack
+                        : AppColors.kLightGrey,
                     textStyle: AppTextstyle.interSemiBold.copyWith(
                       fontSize: 12.sp,
                       height: 1.5,
                       letterSpacing: 0.3,
+                      color: selectedCategory == 'Kids'
+                          ? AppColors.kWhite
+                          : AppColors.kGrey,
                     ),
                   ),
 
                   SizedBox(width: 10.w),
                   CustomCategoryFilter(
-                    onTap: () {},
+                    onTap: () {
+                      setState(() {
+                        selectedCategory = 'Bags';
+                      });
+                    },
                     width: 88.w,
                     height: 38.h,
                     title: 'Bags',
+                    backgroundColor: selectedCategory == 'Bags'
+                        ? AppColors.kBlack
+                        : AppColors.kLightGrey,
+                    borderColor: selectedCategory == 'Bags'
+                        ? AppColors.kWhite
+                        : AppColors.kLightGrey,
                     textStyle: AppTextstyle.interSemiBold.copyWith(
                       fontSize: 12.sp,
                       height: 1.5,
                       letterSpacing: 0.3,
+                      color: selectedCategory == 'Bags'
+                          ? AppColors.kWhite
+                          : AppColors.kGrey,
                     ),
                   ),
 
                   SizedBox(width: 10.w),
                   CustomCategoryFilter(
-                    onTap: () {},
+                    onTap: () {
+                      setState(() {
+                        selectedCategory = 'Footwear';
+                      });
+                    },
                     width: 100.w,
                     height: 38.h,
                     title: 'Footwear',
+                    backgroundColor: selectedCategory == 'Footwear'
+                        ? AppColors.kBlack
+                        : AppColors.kLightGrey,
+                    borderColor: selectedCategory == 'Footwear'
+                        ? AppColors.kWhite
+                        : AppColors.kLightGrey,
                     textStyle: AppTextstyle.interSemiBold.copyWith(
                       fontSize: 12.sp,
                       height: 1.5,
                       letterSpacing: 0.3,
+                      color: selectedCategory == 'Footwear'
+                          ? AppColors.kWhite
+                          : AppColors.kGrey,
                     ),
                   ),
 
                   SizedBox(width: 10.w),
                   CustomCategoryFilter(
-                    onTap: () {},
+                    onTap: () {
+                      setState(() {
+                        selectedCategory = 'Shoes';
+                      });
+                    },
                     width: 80.w,
                     height: 38.h,
                     title: 'Shoes',
+                    backgroundColor: selectedCategory == 'Shoes'
+                        ? AppColors.kBlack
+                        : AppColors.kLightGrey,
+                    borderColor: selectedCategory == 'Shoes'
+                        ? AppColors.kWhite
+                        : AppColors.kLightGrey,
                     textStyle: AppTextstyle.interSemiBold.copyWith(
                       fontSize: 12.sp,
                       height: 1.5,
                       letterSpacing: 0.3,
+                      color: selectedCategory == 'Shoes'
+                          ? AppColors.kWhite
+                          : AppColors.kGrey,
                     ),
                   ),
                 ],
