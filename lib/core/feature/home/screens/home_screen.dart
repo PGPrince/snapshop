@@ -45,6 +45,7 @@ class HomeScreenState extends State<HomeScreen> {
               child: Row(
                 children: [
                   CustomCategoryFilter(
+                    onTap: () {},
                     width: 58.w,
                     height: 38.h,
                     title: 'All',
@@ -56,6 +57,7 @@ class HomeScreenState extends State<HomeScreen> {
                   ),
                   SizedBox(width: 10.w),
                   CustomCategoryFilter(
+                    onTap: () {},
                     width: 88.w,
                     height: 38.h,
                     title: 'Woman',
@@ -67,6 +69,7 @@ class HomeScreenState extends State<HomeScreen> {
                   ),
                   SizedBox(width: 10.w),
                   CustomCategoryFilter(
+                    onTap: () {},
                     width: 68.w,
                     height: 38.h,
                     title: 'Man',
@@ -80,6 +83,7 @@ class HomeScreenState extends State<HomeScreen> {
 
                   SizedBox(width: 10.w),
                   CustomCategoryFilter(
+                    onTap: () {},
                     width: 69.w,
                     height: 38.h,
                     title: 'Kids',
@@ -92,6 +96,7 @@ class HomeScreenState extends State<HomeScreen> {
 
                   SizedBox(width: 10.w),
                   CustomCategoryFilter(
+                    onTap: () {},
                     width: 88.w,
                     height: 38.h,
                     title: 'Bags',
@@ -104,6 +109,7 @@ class HomeScreenState extends State<HomeScreen> {
 
                   SizedBox(width: 10.w),
                   CustomCategoryFilter(
+                    onTap: () {},
                     width: 100.w,
                     height: 38.h,
                     title: 'Footwear',
@@ -116,6 +122,7 @@ class HomeScreenState extends State<HomeScreen> {
 
                   SizedBox(width: 10.w),
                   CustomCategoryFilter(
+                    onTap: () {},
                     width: 80.w,
                     height: 38.h,
                     title: 'Shoes',
