@@ -29,7 +29,7 @@ class CustomSearchBar extends StatelessWidget {
     return Container(
       width: width,
       height: height,
-      padding: EdgeInsets.only(top: 115.h, left: 16.w),
+
       child: TextFormField(
         decoration: InputDecoration(
           prefixIcon: Icon(prefixIcon, color: iconColor, size: iconSize),
