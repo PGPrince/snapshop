@@ -23,7 +23,17 @@ class CustomCategoryFilter extends StatelessWidget {
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(width: 1.w),
       ),
-      child: Center(child: Text(title, style: textStyle)),
+      child: Center(
+        child: Padding(
+          padding: EdgeInsets.only(
+            top: 10.h,
+            bottom: 10.h,
+            left: 20.w,
+            right: 20.w,
+          ),
+          child: Text(title, style: textStyle),
+        ),
+      ),
     );
   }
 }
