@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:snapshop/core/cards/product_card.dart';
 import 'package:snapshop/core/common_widgets/category_filter/custom_category_filter.dart';
 import 'package:snapshop/core/common_widgets/search_bar/custom_search_bar.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
@@ -228,6 +229,94 @@ class HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
+            ),
+
+            SizedBox(height: 30.h),
+
+            Row(
+              children: [
+                ProductCard(
+                  path: 'assets/images/product/all/product1.png',
+                  title: 'Jacket',
+                  titleStyle: AppTextstyle.interRegular.copyWith(
+                    fontSize: 14.sp,
+                    height: 1.5,
+                    letterSpacing: 0.3,
+                    color: AppColors.kWhite,
+                  ),
+                  subTitle: '\$100',
+                  subTitleStyle: AppTextstyle.interSemiBold.copyWith(
+                    fontSize: 14.sp,
+                    height: 1.5,
+                    letterSpacing: 0.3,
+                    color: AppColors.kWhite,
+                  ),
+                ),
+
+                SizedBox(width: 20.w),
+
+                ProductCard(
+                  path: 'assets/images/product/all/product2.png',
+                  title: 'Pant',
+                  titleStyle: AppTextstyle.interRegular.copyWith(
+                    fontSize: 14.sp,
+                    height: 1.5,
+                    letterSpacing: 0.3,
+                    color: AppColors.kWhite,
+                  ),
+                  subTitle: '\$20',
+                  subTitleStyle: AppTextstyle.interSemiBold.copyWith(
+                    fontSize: 14.sp,
+                    height: 1.5,
+                    letterSpacing: 0.3,
+                    color: AppColors.kWhite,
+                  ),
+                ),
+              ],
+            ),
+
+            SizedBox(height: 20.h),
+
+            Row(
+              children: [
+                ProductCard(
+                  path: 'assets/images/product/all/product3.png',
+                  title: 'Jacket',
+                  titleStyle: AppTextstyle.interRegular.copyWith(
+                    fontSize: 14.sp,
+                    height: 1.5,
+                    letterSpacing: 0.3,
+                    color: AppColors.kWhite,
+                  ),
+                  subTitle: '\$80',
+                  subTitleStyle: AppTextstyle.interSemiBold.copyWith(
+                    fontSize: 14.sp,
+                    height: 1.5,
+                    letterSpacing: 0.3,
+                    color: AppColors.kWhite,
+                  ),
+                ),
+
+                SizedBox(width: 20.w),
+
+                ProductCard(
+                  path: 'assets/images/product/all/product1.png',
+                  title: 'Dress',
+                  titleStyle: AppTextstyle.interRegular.copyWith(
+                    fontSize: 14.sp,
+                    height: 1.5,
+                    letterSpacing: 0.3,
+                    color: AppColors.kWhite,
+                  ),
+                  subTitle: '\$50',
+                  subTitleStyle: AppTextstyle.interSemiBold.copyWith(
+                    fontSize: 14.sp,
+                    height: 1.5,
+                    letterSpacing: 0.3,
+                    color: AppColors.kWhite,
+                  ),
+                ),
+              ],
             ),
           ],
         ),
