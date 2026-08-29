@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:snapshop/core/cards/product_second_card.dart';
 import 'package:snapshop/core/common_widgets/buttons/custom_icon_button.dart';
 import 'package:snapshop/core/common_widgets/category_filter/custom_category_filter.dart';
+import 'package:snapshop/core/common_widgets/drawer/custom_drawer.dart';
 import 'package:snapshop/core/common_widgets/search_bar/custom_search_bar.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
@@ -42,10 +43,16 @@ class SearchScreenState extends State<SearchScreen> {
         ),
 
         actions: [
-          CustomIconButton(icon: Icons.tune_outlined, color: AppColors.kBlack),
+          Builder(
+            builder: (context) => IconButton(
+              icon: const Icon(Icons.tune_outlined),
+              onPressed: () => Scaffold.of(context).openEndDrawer(),
+            ),
+          ),
         ],
       ),
 
+      endDrawer: CustomDrawer(),
       body: Padding(
         padding: EdgeInsets.only(left: 16),
         child: SingleChildScrollView(
