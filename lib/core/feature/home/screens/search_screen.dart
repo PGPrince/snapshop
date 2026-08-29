@@ -22,6 +22,7 @@ class SearchScreenState extends State<SearchScreen> {
     return Scaffold(
       backgroundColor: AppColors.kWhite,
       appBar: AppBar(
+        backgroundColor: AppColors.kWhite,
         leading: CustomIconButton(
           icon: Icons.arrow_back,
           color: AppColors.kBlack,
