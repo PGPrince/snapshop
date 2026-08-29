@@ -4,17 +4,17 @@ import 'package:snapshop/core/constants/app_colors.dart';
 
 class ProductSecondCard extends StatelessWidget {
   final String path;
-  // final String title;
-  // final String subTitle;
-  // final TextStyle titleStyle;
-  // final TextStyle subTitleStyle;
+  final String title;
+  final String subTitle;
+  final TextStyle titleStyle;
+  final TextStyle subTitleStyle;
   const ProductSecondCard({
     super.key,
     required this.path,
-    // required this.title,
-    // required this.subTitle,
-    // required this.titleStyle,
-    // required this.subTitleStyle,
+    required this.title,
+    required this.subTitle,
+    required this.titleStyle,
+    required this.subTitleStyle,
   });
 
   @override
@@ -24,7 +24,7 @@ class ProductSecondCard extends StatelessWidget {
       height: 208.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        color: Colors.amber,
+        color: AppColors.kWhite,
       ),
       child: Stack(
         clipBehavior: Clip.none,
@@ -53,7 +53,10 @@ class ProductSecondCard extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: [Text("Bentwood Chair"), Text('\$68.00')],
+              children: [
+                Text(title, style: titleStyle),
+                Text(subTitle, style: subTitleStyle),
+              ],
             ),
           ),
 
