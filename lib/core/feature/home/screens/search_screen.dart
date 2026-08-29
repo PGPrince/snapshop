@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:snapshop/core/cards/product_second_card.dart';
 import 'package:snapshop/core/common_widgets/buttons/custom_icon_button.dart';
 import 'package:snapshop/core/common_widgets/category_filter/custom_category_filter.dart';
 import 'package:snapshop/core/common_widgets/search_bar/custom_search_bar.dart';
@@ -19,6 +20,7 @@ class SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.kWhite,
       appBar: AppBar(
         leading: CustomIconButton(
           icon: Icons.arrow_back,
