@@ -48,119 +48,244 @@ class SearchScreenState extends State<SearchScreen> {
 
       body: Padding(
         padding: EdgeInsets.only(left: 16),
-        child: Column(
-          children: [
-            SizedBox(height: 20.h),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: 20.h),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    CustomCategoryFilter(
+                      onTap: () {
+                        setState(() {
+                          selectedCategory = 'New';
+                        });
+                      },
+                      width: 80.w,
+                      height: 38.h,
+                      title: 'New',
+                      backgroundColor: selectedCategory == 'New'
+                          ? AppColors.kBlack
+                          : AppColors.kLightGrey,
+                      borderColor: selectedCategory == 'New'
+                          ? AppColors.kBlack
+                          : AppColors.kLightGrey,
+                      textStyle: AppTextstyle.interSemiBold.copyWith(
+                        fontSize: 12.sp,
+                        height: 1.5,
+                        letterSpacing: 0.3,
+                        color: selectedCategory == 'New'
+                            ? AppColors.kWhite
+                            : AppColors.kGrey,
+                      ),
+                    ),
+                    SizedBox(width: 10.w),
+                    CustomCategoryFilter(
+                      onTap: () {
+                        setState(() {
+                          selectedCategory = 'Best seller';
+                        });
+                      },
+                      width: 110.w,
+                      height: 38.h,
+                      title: 'Best seller',
+                      backgroundColor: selectedCategory == 'Best seller'
+                          ? AppColors.kBlack
+                          : AppColors.kLightGrey,
+                      borderColor: selectedCategory == 'Best seller'
+                          ? AppColors.kBlack
+                          : AppColors.kLightGrey,
+                      textStyle: AppTextstyle.interSemiBold.copyWith(
+                        fontSize: 12.sp,
+                        height: 1.5,
+                        letterSpacing: 0.3,
+                        color: selectedCategory == 'Best seller'
+                            ? AppColors.kWhite
+                            : AppColors.kGrey,
+                      ),
+                    ),
+                    SizedBox(width: 10.w),
+                    CustomCategoryFilter(
+                      onTap: () {
+                        setState(() {
+                          selectedCategory = 'Trending';
+                        });
+                      },
+                      width: 100.w,
+                      height: 38.h,
+                      title: 'Trending',
+                      backgroundColor: selectedCategory == 'Trending'
+                          ? AppColors.kBlack
+                          : AppColors.kLightGrey,
+
+                      borderColor: selectedCategory == 'Trending'
+                          ? AppColors.kBlack
+                          : AppColors.kLightGrey,
+                      textStyle: AppTextstyle.interSemiBold.copyWith(
+                        fontSize: 12.sp,
+                        height: 1.5,
+                        letterSpacing: 0.3,
+                        color: selectedCategory == 'Trending'
+                            ? AppColors.kWhite
+                            : AppColors.kGrey,
+                      ),
+                    ),
+                    SizedBox(width: 10.w),
+
+                    SizedBox(width: 10.w),
+                    CustomCategoryFilter(
+                      onTap: () {
+                        setState(() {
+                          selectedCategory = 'Recent';
+                        });
+                      },
+                      width: 100.w,
+                      height: 38.h,
+                      title: 'Recent',
+                      backgroundColor: selectedCategory == 'Recent'
+                          ? AppColors.kBlack
+                          : AppColors.kLightGrey,
+                      borderColor: selectedCategory == 'Recent'
+                          ? AppColors.kBlack
+                          : AppColors.kLightGrey,
+                      textStyle: AppTextstyle.interSemiBold.copyWith(
+                        fontSize: 12.sp,
+                        height: 1.5,
+                        letterSpacing: 0.3,
+                        color: selectedCategory == 'Recent'
+                            ? AppColors.kWhite
+                            : AppColors.kGrey,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              SizedBox(height: 30.h),
+
+              Row(
                 children: [
-                  CustomCategoryFilter(
-                    onTap: () {
-                      setState(() {
-                        selectedCategory = 'New';
-                      });
-                    },
-                    width: 80.w,
-                    height: 38.h,
-                    title: 'New',
-                    backgroundColor: selectedCategory == 'New'
-                        ? AppColors.kBlack
-                        : AppColors.kLightGrey,
-                    borderColor: selectedCategory == 'New'
-                        ? AppColors.kBlack
-                        : AppColors.kLightGrey,
-                    textStyle: AppTextstyle.interSemiBold.copyWith(
+                  ProductSecondCard(
+                    path: 'assets/images/product/best_seller/product1.png',
+                    title: 'Bentwood Chair',
+                    titleStyle: AppTextstyle.interRegular.copyWith(
                       fontSize: 12.sp,
                       height: 1.5,
                       letterSpacing: 0.3,
-                      color: selectedCategory == 'New'
-                          ? AppColors.kWhite
-                          : AppColors.kGrey,
                     ),
-                  ),
-                  SizedBox(width: 10.w),
-                  CustomCategoryFilter(
-                    onTap: () {
-                      setState(() {
-                        selectedCategory = 'Best seller';
-                      });
-                    },
-                    width: 110.w,
-                    height: 38.h,
-                    title: 'Best seller',
-                    backgroundColor: selectedCategory == 'Best seller'
-                        ? AppColors.kBlack
-                        : AppColors.kLightGrey,
-                    borderColor: selectedCategory == 'Best seller'
-                        ? AppColors.kBlack
-                        : AppColors.kLightGrey,
-                    textStyle: AppTextstyle.interSemiBold.copyWith(
-                      fontSize: 12.sp,
-                      height: 1.5,
-                      letterSpacing: 0.3,
-                      color: selectedCategory == 'Best seller'
-                          ? AppColors.kWhite
-                          : AppColors.kGrey,
-                    ),
-                  ),
-                  SizedBox(width: 10.w),
-                  CustomCategoryFilter(
-                    onTap: () {
-                      setState(() {
-                        selectedCategory = 'Trending';
-                      });
-                    },
-                    width: 100.w,
-                    height: 38.h,
-                    title: 'Trending',
-                    backgroundColor: selectedCategory == 'Trending'
-                        ? AppColors.kBlack
-                        : AppColors.kLightGrey,
 
-                    borderColor: selectedCategory == 'Trending'
-                        ? AppColors.kBlack
-                        : AppColors.kLightGrey,
-                    textStyle: AppTextstyle.interSemiBold.copyWith(
-                      fontSize: 12.sp,
+                    subTitle: '\$68.00',
+                    subTitleStyle: AppTextstyle.interMedium.copyWith(
+                      fontSize: 14.sp,
                       height: 1.5,
                       letterSpacing: 0.3,
-                      color: selectedCategory == 'Trending'
-                          ? AppColors.kWhite
-                          : AppColors.kGrey,
                     ),
                   ),
                   SizedBox(width: 10.w),
 
-                  SizedBox(width: 10.w),
-                  CustomCategoryFilter(
-                    onTap: () {
-                      setState(() {
-                        selectedCategory = 'Recent';
-                      });
-                    },
-                    width: 100.w,
-                    height: 38.h,
-                    title: 'Recent',
-                    backgroundColor: selectedCategory == 'Recent'
-                        ? AppColors.kBlack
-                        : AppColors.kLightGrey,
-                    borderColor: selectedCategory == 'Recent'
-                        ? AppColors.kBlack
-                        : AppColors.kLightGrey,
-                    textStyle: AppTextstyle.interSemiBold.copyWith(
+                  ProductSecondCard(
+                    path: 'assets/images/product/best_seller/product2.png',
+                    title: 'Bentwood Chair',
+                    titleStyle: AppTextstyle.interRegular.copyWith(
                       fontSize: 12.sp,
                       height: 1.5,
                       letterSpacing: 0.3,
-                      color: selectedCategory == 'Recent'
-                          ? AppColors.kWhite
-                          : AppColors.kGrey,
+                    ),
+
+                    subTitle: '\$68.00',
+                    subTitleStyle: AppTextstyle.interMedium.copyWith(
+                      fontSize: 14.sp,
+                      height: 1.5,
+                      letterSpacing: 0.3,
                     ),
                   ),
                 ],
               ),
-            ),
-          ],
+
+              SizedBox(height: 22.h),
+
+              Row(
+                children: [
+                  ProductSecondCard(
+                    path: 'assets/images/product/best_seller/product3.png',
+                    title: 'Bentwood Chair',
+                    titleStyle: AppTextstyle.interRegular.copyWith(
+                      fontSize: 12.sp,
+                      height: 1.5,
+                      letterSpacing: 0.3,
+                    ),
+
+                    subTitle: '\$68.00',
+                    subTitleStyle: AppTextstyle.interMedium.copyWith(
+                      fontSize: 14.sp,
+                      height: 1.5,
+                      letterSpacing: 0.3,
+                    ),
+                  ),
+                  SizedBox(width: 10.w),
+
+                  ProductSecondCard(
+                    path: 'assets/images/product/best_seller/product4.png',
+                    title: 'Bentwood Chair',
+                    titleStyle: AppTextstyle.interRegular.copyWith(
+                      fontSize: 12.sp,
+                      height: 1.5,
+                      letterSpacing: 0.3,
+                    ),
+
+                    subTitle: '\$68.00',
+                    subTitleStyle: AppTextstyle.interMedium.copyWith(
+                      fontSize: 14.sp,
+                      height: 1.5,
+                      letterSpacing: 0.3,
+                    ),
+                  ),
+                ],
+              ),
+
+              SizedBox(height: 22.h),
+
+              Row(
+                children: [
+                  ProductSecondCard(
+                    path: 'assets/images/product/best_seller/product5.png',
+                    title: 'Bentwood Chair',
+                    titleStyle: AppTextstyle.interRegular.copyWith(
+                      fontSize: 12.sp,
+                      height: 1.5,
+                      letterSpacing: 0.3,
+                    ),
+
+                    subTitle: '\$68.00',
+                    subTitleStyle: AppTextstyle.interMedium.copyWith(
+                      fontSize: 14.sp,
+                      height: 1.5,
+                      letterSpacing: 0.3,
+                    ),
+                  ),
+                  SizedBox(width: 10.w),
+
+                  ProductSecondCard(
+                    path: 'assets/images/product/best_seller/product6.png',
+                    title: 'Bentwood Chair',
+                    titleStyle: AppTextstyle.interRegular.copyWith(
+                      fontSize: 12.sp,
+                      height: 1.5,
+                      letterSpacing: 0.3,
+                    ),
+
+                    subTitle: '\$68.00',
+                    subTitleStyle: AppTextstyle.interMedium.copyWith(
+                      fontSize: 14.sp,
+                      height: 1.5,
+                      letterSpacing: 0.3,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
