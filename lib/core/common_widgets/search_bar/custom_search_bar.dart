@@ -36,13 +36,21 @@ class CustomSearchBar extends StatelessWidget {
           hintText: hintText,
           suffixIcon: suffixIcons == null
               ? null
-              : Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: suffixIcons!
-                      .map(
-                        (icon) => Icon(icon, size: iconSize, color: iconColor),
-                      )
-                      .toList(),
+              : Padding(
+                  padding: EdgeInsets.all(12.w),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.end,
+
+                    children: suffixIcons!
+                        .map(
+                          (icon) => Padding(
+                            padding: EdgeInsets.only(left: 8.w),
+                            child: Icon(icon, size: iconSize, color: iconColor),
+                          ),
+                        )
+                        .toList(),
+                  ),
                 ),
 
           focusedBorder: OutlineInputBorder(
