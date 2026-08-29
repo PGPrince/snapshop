@@ -20,7 +20,6 @@ class SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.kWhite,
       appBar: AppBar(
         backgroundColor: AppColors.kWhite,
         leading: CustomIconButton(
