@@ -69,6 +69,8 @@ flutter:
     - assets/images/product/categories/
     - assets/images/product/product_details/
     - assets/images/cart/
+    - assets/images/order_success/
+
     
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
