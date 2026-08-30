@@ -425,7 +425,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 ),
               ],
             ),
-            Divider(),
+            Divider(color: AppColors.kLightGrey, thickness: 1),
             Row(
               children: [
                 Text(
