@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:snapshop/core/feature/home/screens/home_screen.dart';
-import 'package:snapshop/core/feature/home/screens/search_screen.dart';
+import 'package:snapshop/core/feature/home/screens/product_details_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             colorScheme: .fromSeed(seedColor: Colors.deepPurple),
           ),
-          home: SearchScreen(),
+          home: ProductDetailsScreen(),
         );
       },
     );
