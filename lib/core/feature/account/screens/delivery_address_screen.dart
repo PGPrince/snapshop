@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:snapshop/core/common_widgets/address_card/custom_address_card.dart';
 import 'package:snapshop/core/common_widgets/buttons/custom_button.dart';
 import 'package:snapshop/core/common_widgets/buttons/custom_icon_button.dart';
-import 'package:snapshop/core/common_widgets/buttons/custom_text_button.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
 
