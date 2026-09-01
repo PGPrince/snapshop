@@ -55,6 +55,9 @@ class _HelpCenterScreenState extends State<HelpCenterScreen> {
                       backgroundColor: selectedFilter == 'General'
                           ? AppColors.kBlack
                           : AppColors.kWhite,
+                      borderColor: selectedFilter == 'General'
+                          ? AppColors.kBlack
+                          : AppColors.kLightGrey,
                       title: 'General',
                       textStyle: AppTextstyle.interSemiBold.copyWith(
                         fontSize: 14.sp,
@@ -62,7 +65,7 @@ class _HelpCenterScreenState extends State<HelpCenterScreen> {
                         letterSpacing: 0.3,
                         color: selectedFilter == 'General'
                             ? AppColors.kWhite
-                            : AppColors.kBlack,
+                            : AppColors.kLightGrey,
                       ),
                       onTap: () {
                         setState(() {
@@ -77,6 +80,9 @@ class _HelpCenterScreenState extends State<HelpCenterScreen> {
                       backgroundColor: selectedFilter == 'Account'
                           ? AppColors.kBlack
                           : AppColors.kWhite,
+                      borderColor: selectedFilter == 'Account'
+                          ? AppColors.kBlack
+                          : AppColors.kLightGrey,
                       title: 'Account',
                       textStyle: AppTextstyle.interSemiBold.copyWith(
                         fontSize: 14.sp,
@@ -84,7 +90,7 @@ class _HelpCenterScreenState extends State<HelpCenterScreen> {
                         letterSpacing: 0.3,
                         color: selectedFilter == 'Account'
                             ? AppColors.kWhite
-                            : AppColors.kBlack,
+                            : AppColors.kLightGrey,
                       ),
                       onTap: () {
                         setState(() {
@@ -99,6 +105,9 @@ class _HelpCenterScreenState extends State<HelpCenterScreen> {
                       backgroundColor: selectedFilter == 'Service'
                           ? AppColors.kBlack
                           : AppColors.kWhite,
+                      borderColor: selectedFilter == 'Service'
+                          ? AppColors.kBlack
+                          : AppColors.kLightGrey,
                       title: 'Service',
                       textStyle: AppTextstyle.interSemiBold.copyWith(
                         fontSize: 14.sp,
@@ -106,7 +115,7 @@ class _HelpCenterScreenState extends State<HelpCenterScreen> {
                         letterSpacing: 0.3,
                         color: selectedFilter == 'Service'
                             ? AppColors.kWhite
-                            : AppColors.kBlack,
+                            : AppColors.kLightGrey,
                       ),
                       onTap: () {
                         setState(() {
@@ -121,6 +130,9 @@ class _HelpCenterScreenState extends State<HelpCenterScreen> {
                       backgroundColor: selectedFilter == 'Payment'
                           ? AppColors.kBlack
                           : AppColors.kWhite,
+                      borderColor: selectedFilter == 'Payment'
+                          ? AppColors.kBlack
+                          : AppColors.kLightGrey,
                       title: 'Payment',
                       textStyle: AppTextstyle.interSemiBold.copyWith(
                         fontSize: 14.sp,
@@ -128,7 +140,7 @@ class _HelpCenterScreenState extends State<HelpCenterScreen> {
                         letterSpacing: 0.3,
                         color: selectedFilter == 'Payment'
                             ? AppColors.kWhite
-                            : AppColors.kBlack,
+                            : AppColors.kLightGrey,
                       ),
                       onTap: () {
                         setState(() {
