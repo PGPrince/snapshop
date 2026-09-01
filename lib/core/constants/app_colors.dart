@@ -1,25 +1,30 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  //Black Color
+  // Black Color
   static const Color kBlack = Colors.black;
 
-  //White Color
+  // White Color
   static const Color kWhite = Colors.white;
 
-  //Grey Color
+  // Grey Color
   static const Color kGrey = Colors.grey;
 
-  //Light Grey Color
+  // Light Grey Color
   static const Color kLightGrey = Color(0xFFE6E6E6);
 
-  //Very Light Grey Color
+  // Very Light Grey Color
   static const Color kVeryLightGrey = Color(0xFFF4F4F4);
 
   // Dark Color
   static const kDarkGrey = Color(0xFF4A4A4A);
 
+  // Warm Cream Color
   static const kWarmCream = Color(0xFFFFEFE3);
 
+  // Dart Green Color
   static const Color kDarkGreen = Color(0xFF334820);
+
+  // Green Color
+  static const Color kGreen = Colors.green;
 }
