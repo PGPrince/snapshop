@@ -13,11 +13,18 @@ class CustomSearchBar extends StatelessWidget {
   final String hintText;
 
   final List<IconData>? suffixIcons;
+  final bool filled;
+  final Color? fillColor;
+
+  final TextStyle? hintStyle;
   const CustomSearchBar({
     super.key,
     this.width,
     this.height,
     this.iconSize,
+    this.filled = false,
+    this.fillColor,
+    this.hintStyle,
     required this.hintText,
     required this.prefixIcon,
     required this.iconColor,
@@ -32,8 +39,11 @@ class CustomSearchBar extends StatelessWidget {
 
       child: TextFormField(
         decoration: InputDecoration(
+          filled: filled,
+          fillColor: fillColor,
           prefixIcon: Icon(prefixIcon, color: iconColor, size: iconSize),
           hintText: hintText,
+          hintStyle: hintStyle,
           suffixIcon: suffixIcons == null
               ? null
               : Padding(
