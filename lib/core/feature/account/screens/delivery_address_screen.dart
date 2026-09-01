@@ -75,6 +75,9 @@ class _DeliveryAddressScreenState extends State<DeliveryAddressScreen> {
             ),
           ),
           CustomButton(
+            width: 343.w,
+            height: 56.h,
+            borderRadius: 16.r,
             onPressed: () {},
             title: 'Add New Address',
             textStyle: AppTextstyle.interSemiBold.copyWith(
