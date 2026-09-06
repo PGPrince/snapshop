@@ -20,6 +20,26 @@ class _AddNewCardScreenState extends State<AddNewCardScreen> {
   TextEditingController cvvController = TextEditingController();
 
   @override
+  void initState() {
+    super.initState();
+    cardNumberController.addListener(() {
+      setState(() {});
+    });
+    cardHolderController.addListener(() {
+      setState(() {});
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    cardNumberController.dispose();
+    cardHolderController.dispose();
+    expDateController.dispose();
+    cvvController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.kWhite,
@@ -96,7 +116,9 @@ class _AddNewCardScreenState extends State<AddNewCardScreen> {
                       SizedBox(height: 10.h),
 
                       Text(
-                        "5698    56254    6786    9979",
+                        cardNumberController.text.isEmpty
+                            ? "5698    56254    6786    9979"
+                            : cardNumberController.text,
                         style: AppTextstyle.interSemiBold.copyWith(
                           fontSize: 16.78.sp,
                           height: 1.5,
@@ -121,7 +143,9 @@ class _AddNewCardScreenState extends State<AddNewCardScreen> {
                                 ),
                               ),
                               Text(
-                                'Name Here',
+                                cardHolderController.text.isEmpty
+                                    ? 'Name Here'
+                                    : cardHolderController.text,
                                 style: AppTextstyle.interSemiBold.copyWith(
                                   fontSize: 16.78.sp,
                                   height: 1.5,
