@@ -14,6 +14,11 @@ class AddNewCardScreen extends StatefulWidget {
 }
 
 class _AddNewCardScreenState extends State<AddNewCardScreen> {
+  TextEditingController cardNumberController = TextEditingController();
+  TextEditingController cardHolderController = TextEditingController();
+  TextEditingController expDateController = TextEditingController();
+  TextEditingController cvvController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -157,6 +162,7 @@ class _AddNewCardScreenState extends State<AddNewCardScreen> {
                 color: AppColors.kBlack,
               ),
               child: CustomTextField(
+                controller: cardNumberController,
                 title: 'Card Number',
                 hintStyle: AppTextstyle.interMedium.copyWith(
                   fontSize: 14.sp,
@@ -179,6 +185,7 @@ class _AddNewCardScreenState extends State<AddNewCardScreen> {
                 color: AppColors.kBlack,
               ),
               child: CustomTextField(
+                controller: cardHolderController,
                 title: 'Card Holder',
                 hintStyle: AppTextstyle.interMedium.copyWith(
                   fontSize: 14.sp,
@@ -201,6 +208,7 @@ class _AddNewCardScreenState extends State<AddNewCardScreen> {
                     color: AppColors.kBlack,
                   ),
                   child: CustomTextField(
+                    controller: expDateController,
                     title: 'Exp date',
                     hintStyle: AppTextstyle.interMedium.copyWith(
                       fontSize: 14.sp,
@@ -222,6 +230,7 @@ class _AddNewCardScreenState extends State<AddNewCardScreen> {
                     color: AppColors.kBlack,
                   ),
                   child: CustomTextField(
+                    controller: cvvController,
                     title: 'CVV',
                     hintStyle: AppTextstyle.interMedium.copyWith(
                       fontSize: 14.sp,
