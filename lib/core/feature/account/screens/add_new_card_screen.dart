@@ -164,7 +164,15 @@ class _AddNewCardScreenState extends State<AddNewCardScreen> {
               child: CustomTextField(
                 controller: cardNumberController,
                 title: 'Card Number',
+
                 hintStyle: AppTextstyle.interMedium.copyWith(
+                  fontSize: 14.sp,
+                  height: 1.5,
+                  letterSpacing: 0.3,
+                  color: AppColors.kWhite,
+                ),
+
+                textStyle: AppTextstyle.interMedium.copyWith(
                   fontSize: 14.sp,
                   height: 1.5,
                   letterSpacing: 0.3,
@@ -193,6 +201,12 @@ class _AddNewCardScreenState extends State<AddNewCardScreen> {
                   letterSpacing: 0.3,
                   color: AppColors.kWhite,
                 ),
+                textStyle: AppTextstyle.interMedium.copyWith(
+                  fontSize: 14.sp,
+                  height: 1.5,
+                  letterSpacing: 0.3,
+                  color: AppColors.kWhite,
+                ),
                 radius: 16.r,
               ),
             ),
@@ -216,6 +230,12 @@ class _AddNewCardScreenState extends State<AddNewCardScreen> {
                       letterSpacing: 0.3,
                       color: AppColors.kWhite,
                     ),
+                    textStyle: AppTextstyle.interMedium.copyWith(
+                      fontSize: 14.sp,
+                      height: 1.5,
+                      letterSpacing: 0.3,
+                      color: AppColors.kWhite,
+                    ),
                     radius: 16.r,
                   ),
                 ),
@@ -233,6 +253,12 @@ class _AddNewCardScreenState extends State<AddNewCardScreen> {
                     controller: cvvController,
                     title: 'CVV',
                     hintStyle: AppTextstyle.interMedium.copyWith(
+                      fontSize: 14.sp,
+                      height: 1.5,
+                      letterSpacing: 0.3,
+                      color: AppColors.kWhite,
+                    ),
+                    textStyle: AppTextstyle.interMedium.copyWith(
                       fontSize: 14.sp,
                       height: 1.5,
                       letterSpacing: 0.3,
