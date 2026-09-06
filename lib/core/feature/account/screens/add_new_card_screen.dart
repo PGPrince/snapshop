@@ -156,8 +156,6 @@ class _AddNewCardScreenState extends State<AddNewCardScreen> {
               ),
               SizedBox(height: 20.h),
               Container(
-                width: 327.w,
-                height: 56.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16.r),
                   color: AppColors.kBlack,
@@ -187,8 +185,6 @@ class _AddNewCardScreenState extends State<AddNewCardScreen> {
               ),
               SizedBox(height: 20.h),
               Container(
-                width: 327.w,
-                height: 56.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16.r),
                   color: AppColors.kBlack,
@@ -241,7 +237,7 @@ class _AddNewCardScreenState extends State<AddNewCardScreen> {
                     ),
                   ),
 
-                  SizedBox(width: 20.w),
+                  SizedBox(width: 40.w),
 
                   Container(
                     width: 151.5.w,
