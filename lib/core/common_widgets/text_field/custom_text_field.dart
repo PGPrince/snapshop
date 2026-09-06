@@ -15,6 +15,8 @@ class CustomTextField extends StatelessWidget {
 
   final double radius;
 
+  final TextStyle? textStyle;
+
   const CustomTextField({
     super.key,
     required this.title,
@@ -24,6 +26,7 @@ class CustomTextField extends StatelessWidget {
     this.suffixIcon,
     this.hintStyle,
     this.obscureText = false,
+    this.textStyle,
   });
 
   @override
@@ -34,6 +37,7 @@ class CustomTextField extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         obscureText: obscureText,
+        style: textStyle,
         decoration: InputDecoration(
           hintText: title,
           hintStyle: hintStyle,
