@@ -30,4 +30,7 @@ class AppColors {
 
   //Purple Color
   static const Color kPurple = Colors.purple;
+
+  // Red Color
+  static const Color kRed = Colors.red;
 }
