@@ -28,9 +28,12 @@ class AppColors {
   // Green Color
   static const Color kGreen = Color(0xFF00AB67);
 
-  //Purple Color
+  // Purple Color
   static const Color kPurple = Colors.purple;
 
   // Red Color
   static const Color kRed = Colors.red;
+
+  // Blue Color
+  static const Color kBlue = Colors.blue;
 }
