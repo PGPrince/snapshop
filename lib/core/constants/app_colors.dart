@@ -26,7 +26,7 @@ class AppColors {
   static const Color kDarkGreen = Color(0xFF334820);
 
   // Green Color
-  static const Color kGreen = Color(0xFF00AB67);
+  static const Color kGreen = Colors.green;
 
   // Purple Color
   static const Color kPurple = Colors.purple;
