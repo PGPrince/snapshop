@@ -107,7 +107,9 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
                     letterSpacing: 0.3,
                     color: AppColors.kRed,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    showLogOutDialog();
+                  },
                 ),
               ),
             ],
@@ -173,6 +175,99 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
             Icon(Icons.keyboard_arrow_right),
           ],
         ),
+      ),
+    );
+  }
+
+  Future<void> showLogOutDialog() async {
+    await showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        backgroundColor: AppColors.kWhite,
+
+        title: Text(
+          'Logout',
+          textAlign: TextAlign.center,
+          style: AppTextstyle.interBold.copyWith(
+            fontSize: 14.sp,
+            height: 1.5,
+            letterSpacing: 0.3,
+          ),
+        ),
+
+        content: Text(
+          'The less text people have to read\nonscreen, the better.',
+          textAlign: TextAlign.center,
+        ),
+
+        actionsPadding: EdgeInsets.zero,
+
+        actions: [
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Divider(color: AppColors.kLightGrey, thickness: 1, height: 1),
+
+              SizedBox(
+                height: 45.h,
+                child: Row(
+                  children: [
+                    // Cancel
+                    Expanded(
+                      child: TextButton(
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size.zero,
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text(
+                          'Cancel',
+                          style: AppTextstyle.interMedium.copyWith(
+                            fontSize: 16.sp,
+                            height: 1.4,
+                            letterSpacing: 0.2,
+                            color: AppColors.kBlue,
+                          ),
+                        ),
+                      ),
+                    ),
+
+                    VerticalDivider(
+                      color: AppColors.kLightGrey,
+                      thickness: 1,
+                      width: 1,
+                    ),
+
+                    Expanded(
+                      child: TextButton(
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: Size.zero,
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text(
+                          'Logout',
+                          style: AppTextstyle.interMedium.copyWith(
+                            fontSize: 16.sp,
+                            height: 1.4,
+                            letterSpacing: 0.2,
+                            color: AppColors.kRed,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
