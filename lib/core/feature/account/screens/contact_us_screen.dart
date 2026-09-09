@@ -16,14 +16,13 @@ class ContactUsScreen extends StatelessWidget {
           icon: Icons.arrow_back,
           color: AppColors.kBlack,
         ),
-        title: Center(
-          child: Text(
-            'Contact Us',
-            style: AppTextstyle.interBold.copyWith(
-              fontSize: 24.sp,
-              height: 1.3,
-              letterSpacing: -0.48,
-            ),
+        centerTitle: true,
+        title: Text(
+          'Contact Us',
+          style: AppTextstyle.interBold.copyWith(
+            fontSize: 24.sp,
+            height: 1.3,
+            letterSpacing: -0.48,
           ),
         ),
       ),
