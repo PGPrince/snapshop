@@ -8,11 +8,13 @@ class CustomTextButton extends StatelessWidget {
   final double? width;
   final double? height;
   final double? radius;
+  final Color? backgroundColor;
   const CustomTextButton({
     super.key,
     this.width,
     this.height,
     this.radius,
+    this.backgroundColor,
     required this.title,
     required this.textStyle,
     required this.onPressed,
@@ -24,6 +26,7 @@ class CustomTextButton extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
+        color: backgroundColor,
         borderRadius: BorderRadius.circular(radius ?? 16.r),
       ),
       child: TextButton(
