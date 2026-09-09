@@ -24,6 +24,7 @@ class _AccountInfoScreenState extends State<AccountInfoScreen> {
           icon: Icons.arrow_back,
           color: AppColors.kBlack,
         ),
+        centerTitle: true,
         title: Center(
           child: Text(
             'Account Details',
