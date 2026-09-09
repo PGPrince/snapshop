@@ -23,14 +23,13 @@ class _LanguageScreenState extends State<LanguageScreen> {
           icon: Icons.arrow_back,
           color: AppColors.kBlack,
         ),
-        title: Center(
-          child: Text(
-            'Languages',
-            style: AppTextstyle.interBold.copyWith(
-              fontSize: 24.sp,
-              height: 1.3,
-              letterSpacing: -0.48,
-            ),
+        centerTitle: true,
+        title: Text(
+          'Languages',
+          style: AppTextstyle.interBold.copyWith(
+            fontSize: 24.sp,
+            height: 1.3,
+            letterSpacing: -0.48,
           ),
         ),
       ),
