@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextButton extends StatelessWidget {
   final String title;
   final TextStyle textStyle;
   final VoidCallback onPressed;
+  final double? width;
+  final double? height;
+  final double? radius;
   const CustomTextButton({
     super.key,
+    this.width,
+    this.height,
+    this.radius,
     required this.title,
     required this.textStyle,
     required this.onPressed,
@@ -13,9 +20,16 @@ class CustomTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: onPressed,
-      child: Text(title, style: textStyle),
+    return Container(
+      width: width,
+      height: height,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(radius ?? 16.r),
+      ),
+      child: TextButton(
+        onPressed: onPressed,
+        child: Text(title, style: textStyle),
+      ),
     );
   }
 }
