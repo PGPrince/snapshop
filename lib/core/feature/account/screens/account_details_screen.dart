@@ -25,6 +25,7 @@ class _AccountDetailsScreenState extends State<AccountDetailsScreen> {
           icon: Icons.arrow_back,
           color: AppColors.kBlack,
         ),
+        centerTitle: true,
         title: Text(
           'Account Details',
           style: AppTextstyle.interBold.copyWith(
@@ -33,7 +34,6 @@ class _AccountDetailsScreenState extends State<AccountDetailsScreen> {
             letterSpacing: -0.48,
           ),
         ),
-        centerTitle: true,
       ),
       body: Padding(
         padding: EdgeInsets.all(16.r),
