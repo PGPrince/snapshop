@@ -25,14 +25,12 @@ class _AccountInfoScreenState extends State<AccountInfoScreen> {
           color: AppColors.kBlack,
         ),
         centerTitle: true,
-        title: Center(
-          child: Text(
-            'Account Details',
-            style: AppTextstyle.interBold.copyWith(
-              fontSize: 24.sp,
-              height: 1.3,
-              letterSpacing: -0.48,
-            ),
+        title: Text(
+          'Account Details',
+          style: AppTextstyle.interBold.copyWith(
+            fontSize: 24.sp,
+            height: 1.3,
+            letterSpacing: -0.48,
           ),
         ),
       ),
