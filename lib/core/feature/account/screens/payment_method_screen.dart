@@ -46,14 +46,13 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
           icon: Icons.arrow_back,
           color: AppColors.kBlack,
         ),
-        title: Center(
-          child: Text(
-            'Payment Method',
-            style: AppTextstyle.interBold.copyWith(
-              fontSize: 24.sp,
-              height: 1.3,
-              letterSpacing: -0.48,
-            ),
+        centerTitle: true,
+        title: Text(
+          'Payment Method',
+          style: AppTextstyle.interBold.copyWith(
+            fontSize: 24.sp,
+            height: 1.3,
+            letterSpacing: -0.48,
           ),
         ),
       ),
