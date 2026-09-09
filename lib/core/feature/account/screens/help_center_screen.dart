@@ -28,14 +28,13 @@ class _HelpCenterScreenState extends State<HelpCenterScreen> {
           icon: Icons.arrow_back,
           color: AppColors.kBlack,
         ),
-        title: Center(
-          child: Text(
-            'Help Center',
-            style: AppTextstyle.interBold.copyWith(
-              fontSize: 24.sp,
-              height: 1.3,
-              letterSpacing: -0.48,
-            ),
+        centerTitle: true,
+        title: Text(
+          'Help Center',
+          style: AppTextstyle.interBold.copyWith(
+            fontSize: 24.sp,
+            height: 1.3,
+            letterSpacing: -0.48,
           ),
         ),
       ),
