@@ -36,4 +36,7 @@ class AppColors {
 
   // Blue Color
   static const Color kBlue = Colors.blue;
+
+  // Amber
+  static const Color kAmber = Colors.yellow;
 }
