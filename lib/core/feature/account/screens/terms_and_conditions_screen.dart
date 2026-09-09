@@ -15,14 +15,13 @@ class TermsAndConditionsScreen extends StatelessWidget {
           icon: Icons.arrow_back,
           color: AppColors.kBlack,
         ),
-        title: Center(
-          child: Text(
-            'Terms & Conditions',
-            style: AppTextstyle.interBold.copyWith(
-              fontSize: 24.sp,
-              height: 1.3,
-              letterSpacing: -0.48,
-            ),
+        centerTitle: true,
+        title: Text(
+          'Terms & Conditions',
+          style: AppTextstyle.interBold.copyWith(
+            fontSize: 24.sp,
+            height: 1.3,
+            letterSpacing: -0.48,
           ),
         ),
       ),
