@@ -31,6 +31,11 @@ class CustomTextButton extends StatelessWidget {
       ),
       child: TextButton(
         onPressed: onPressed,
+        style: TextButton.styleFrom(
+          padding: EdgeInsets.zero,
+          minimumSize: Size.zero,
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        ),
         child: Text(title, style: textStyle),
       ),
     );
