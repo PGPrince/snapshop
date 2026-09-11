@@ -81,6 +81,7 @@ flutter:
     - assets/images/order_success/
     - assets/images/checkout/
     - assets/images/order_details/
+    - assets/images/wishlist/
 
     
   # An image asset can refer to one or more resolution-specific "variants", see
