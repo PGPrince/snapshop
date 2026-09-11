@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:snapshop/core/feature/cart_and_checkout/add_new_address_screen.dart';
-import 'package:snapshop/core/feature/cart_and_checkout/checkout_screen.dart';
+import 'package:snapshop/core/feature/wishlist/screens/wishlist_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,11 +18,11 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
+          title: 'Snapshop',
           theme: ThemeData(
             colorScheme: .fromSeed(seedColor: Colors.deepPurple),
           ),
-          home: AddNewAddressScreen(),
+          home: WishlistScreen(),
         );
       },
     );
