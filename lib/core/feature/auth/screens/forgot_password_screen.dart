@@ -86,7 +86,10 @@ class ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   width: 343.w,
                   height: 56.h,
                   onPressed: () {
-                    Navigator.pushNamed(context, RouteNames.newPasswordScreen);
+                    Navigator.pushNamed(
+                      context,
+                      RouteNames.verifyPhoneNumberScreen,
+                    );
                   },
                   title: 'Next',
                   textStyle: AppTextstyle.interSemiBold.copyWith(
@@ -270,7 +273,7 @@ class ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   ),
                 ),
                 Text(
-                  'Your email: *****dyne@mail.com',
+                  'Your phone: ***** **** 85652',
                   style: AppTextstyle.interRegular.copyWith(
                     fontSize: 12.sp,
                     height: 1.5,
