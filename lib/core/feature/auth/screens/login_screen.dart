@@ -6,6 +6,7 @@ import 'package:snapshop/core/common_widgets/buttons/custom_text_button.dart';
 import 'package:snapshop/core/common_widgets/text_field/custom_text_field.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
+import 'package:snapshop/core/route/route_names.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -79,14 +80,21 @@ class LoginScreenState extends State<LoginScreen> {
                     color: AppColors.kBlack,
                   ),
 
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(
+                      context,
+                      RouteNames.forgotPasswordScreen,
+                    );
+                  },
                 ),
               ),
               SizedBox(height: 20.h),
               CustomButton(
                 width: 343.w,
                 height: 56.h,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, RouteNames.homeScreen);
+                },
                 title: 'Sign In',
                 textStyle: AppTextstyle.interSemiBold.copyWith(
                   fontSize: 16,
@@ -177,7 +185,9 @@ class LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, RouteNames.signUpScreen);
+                    },
                     child: Text(
                       'Sign Up',
                       style: AppTextstyle.interBold.copyWith(
