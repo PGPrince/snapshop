@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:snapshop/core/common_widgets/buttons/custom_button.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
+import 'package:snapshop/core/route/route_names.dart';
 
 class VerifyPhoneNumberScreen extends StatefulWidget {
   const VerifyPhoneNumberScreen({super.key});
@@ -287,7 +288,12 @@ class VerifyPhoneNumberScreenState extends State<VerifyPhoneNumberScreen> {
                         CustomButton(
                           width: 343.w,
                           height: 56.h,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(
+                              context,
+                              RouteNames.newPasswordScreen,
+                            );
+                          },
                           title: 'verify',
                           textStyle: AppTextstyle.interSemiBold.copyWith(
                             fontSize: 16.sp,
