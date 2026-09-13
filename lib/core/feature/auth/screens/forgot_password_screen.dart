@@ -4,6 +4,7 @@ import 'package:snapshop/core/common_widgets/buttons/custom_button.dart';
 import 'package:snapshop/core/common_widgets/buttons/custom_icon_button.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
+import 'package:snapshop/core/route/route_names.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({super.key});
@@ -22,6 +23,9 @@ class ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
       appBar: AppBar(
         backgroundColor: AppColors.kWhite,
         leading: CustomIconButton(
+          onPressed: () {
+            Navigator.pushNamed(context, RouteNames.loginScreen);
+          },
           icon: Icons.arrow_back,
           color: AppColors.kBlack,
         ),
@@ -81,7 +85,9 @@ class ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 CustomButton(
                   width: 343.w,
                   height: 56.h,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, RouteNames.newPasswordScreen);
+                  },
                   title: 'Next',
                   textStyle: AppTextstyle.interSemiBold.copyWith(
                     fontSize: 16.sp,
