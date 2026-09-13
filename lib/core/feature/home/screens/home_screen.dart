@@ -22,6 +22,7 @@ class HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: AppColors.kWhite,
       appBar: AppBar(
+        backgroundColor: AppColors.kWhite,
         title: Text(
           'SnapShop',
           style: AppTextstyle.interBold.copyWith(fontSize: 24.sp, height: 0.75),
