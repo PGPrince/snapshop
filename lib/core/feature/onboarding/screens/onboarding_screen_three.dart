@@ -4,6 +4,7 @@ import 'package:snapshop/core/common_widgets/buttons/custom_button.dart';
 import 'package:snapshop/core/common_widgets/dot_indicator/custom_do_indicator.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
+import 'package:snapshop/core/route/route_names.dart';
 
 class OnboardingScreenThree extends StatelessWidget {
   final int currentIndex;
@@ -38,7 +39,9 @@ class OnboardingScreenThree extends StatelessWidget {
               children: [
                 SizedBox(height: 20.h),
                 CustomButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, RouteNames.loginScreen);
+                  },
                   title: 'Get Started',
                   icon: Icon(
                     Icons.keyboard_arrow_right,
