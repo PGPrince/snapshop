@@ -5,6 +5,7 @@ import 'package:snapshop/core/common_widgets/buttons/custom_icon_button.dart';
 import 'package:snapshop/core/common_widgets/text_field/custom_text_field.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
+import 'package:snapshop/core/route/route_names.dart';
 
 class AddNewCardScreen extends StatefulWidget {
   const AddNewCardScreen({super.key});
@@ -80,6 +81,12 @@ class _AddNewCardScreenState extends State<AddNewCardScreen> {
                   CustomIconButton(
                     icon: Icons.document_scanner,
                     color: AppColors.kBlack,
+                    onPressed: () {
+                      Navigator.pushNamed(
+                        context,
+                        RouteNames.scanNewCardScreen,
+                      );
+                    },
                   ),
                 ],
               ),
