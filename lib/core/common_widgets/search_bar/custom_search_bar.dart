@@ -19,6 +19,8 @@ class CustomSearchBar extends StatelessWidget {
   final TextStyle? hintStyle;
   final TextEditingController? controller;
   final TextStyle? textStyle;
+  final ValueChanged<String>? onChanged;
+  final ValueChanged<String>? onSubmitted;
   const CustomSearchBar({
     super.key,
     this.width,
@@ -30,6 +32,8 @@ class CustomSearchBar extends StatelessWidget {
     this.controller,
     this.suffixIcons,
     this.textStyle,
+    this.onChanged,
+    this.onSubmitted,
     required this.hintText,
     required this.prefixIcon,
     required this.iconColor,
@@ -37,13 +41,15 @@ class CustomSearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: width,
       height: height,
 
       child: TextFormField(
         controller: controller,
         style: textStyle,
+        onChanged: onChanged,
+        onFieldSubmitted: onSubmitted,
         decoration: InputDecoration(
           filled: filled,
           fillColor: fillColor,
