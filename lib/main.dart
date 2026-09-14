@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:snapshop/core/feature/wishlist/screens/wishlist_screen.dart';
+import 'package:snapshop/core/route/app_route.dart';
+import 'package:snapshop/core/route/route_names.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             colorScheme: .fromSeed(seedColor: Colors.deepPurple),
           ),
-          home: WishlistScreen(),
+          initialRoute: RouteNames.splashScreen,
+          onGenerateRoute: AppRoute.generateRoute,
         );
       },
     );
