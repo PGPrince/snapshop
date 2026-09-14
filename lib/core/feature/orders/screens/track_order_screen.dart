@@ -8,6 +8,7 @@ import 'package:snapshop/core/common_widgets/buttons/custom_button.dart';
 import 'package:snapshop/core/common_widgets/buttons/custom_icon_button.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
+import 'package:snapshop/core/route/route_names.dart';
 
 class TrackOrderScreen extends StatefulWidget {
   const TrackOrderScreen({super.key});
@@ -50,10 +51,6 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
       ),
     );
 
-    print('Status: ${result.status}');
-    print('Error: ${result.errorMessage}');
-    print('Points: ${result.points.length}');
-
     if (result.points.isNotEmpty) {
       setState(() {
         polylineCoordinates = result.points
@@ -77,6 +74,12 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
         leading: CustomIconButton(
           icon: Icons.arrow_back,
           color: AppColors.kBlack,
+          onPressed: () {
+            Navigator.pushReplacementNamed(
+              context,
+              RouteNames.orderDetailsScreen,
+            );
+          },
         ),
         centerTitle: true,
         title: Text(
