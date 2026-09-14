@@ -93,7 +93,7 @@ class LoginScreenState extends State<LoginScreen> {
                 width: 343.w,
                 height: 56.h,
                 onPressed: () {
-                  Navigator.pushNamed(context, RouteNames.homeScreen);
+                  Navigator.pushNamed(context, RouteNames.customNavigationBar);
                 },
                 title: 'Sign In',
                 textStyle: AppTextstyle.interSemiBold.copyWith(
