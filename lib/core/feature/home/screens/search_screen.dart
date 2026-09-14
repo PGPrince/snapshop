@@ -7,16 +7,81 @@ import 'package:snapshop/core/common_widgets/drawer/custom_drawer.dart';
 import 'package:snapshop/core/common_widgets/search_bar/custom_search_bar.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
+import 'package:snapshop/core/route/route_names.dart';
 
 class SearchScreen extends StatefulWidget {
-  const SearchScreen({super.key});
+  final String searchText;
+
+  const SearchScreen({super.key, required this.searchText});
 
   @override
   State<SearchScreen> createState() => SearchScreenState();
 }
 
+State<SearchScreen> createState() => SearchScreenState();
+
 class SearchScreenState extends State<SearchScreen> {
   String selectedCategory = 'New';
+
+  late TextEditingController searchController;
+
+  final List<Map<String, String>> products = [
+    {
+      'path': 'assets/images/product/best_seller/product1.png',
+      'title': 'Bentwood Chair',
+      'price': '\$68.00',
+    },
+    {
+      'path': 'assets/images/product/best_seller/product2.png',
+      'title': 'Dining Chair',
+      'price': '\$75.00',
+    },
+    {
+      'path': 'assets/images/product/best_seller/product3.png',
+      'title': 'Office Chair',
+      'price': '\$80.00',
+    },
+    {
+      'path': 'assets/images/product/best_seller/product4.png',
+      'title': 'Wooden Chair',
+      'price': '\$90.00',
+    },
+    {
+      'path': 'assets/images/product/best_seller/product5.png',
+      'title': 'Modern Chair',
+      'price': '\$100.00',
+    },
+    {
+      'path': 'assets/images/product/best_seller/product6.png',
+      'title': 'Luxury Chair',
+      'price': '\$120.00',
+    },
+  ];
+
+  List<Map<String, String>> get filteredProducts {
+    final searchText = searchController.text.toLowerCase().trim();
+
+    if (searchText.isEmpty) {
+      return products;
+    }
+
+    return products.where((product) {
+      return product['title']!.toLowerCase().contains(searchText);
+    }).toList();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    searchController = TextEditingController(text: widget.searchText);
+  }
+
+  @override
+  void dispose() {
+    searchController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +91,9 @@ class SearchScreenState extends State<SearchScreen> {
         leading: CustomIconButton(
           icon: Icons.arrow_back,
           color: AppColors.kBlack,
+          onPressed: () {
+            Navigator.pushNamed(context, RouteNames.homeScreen);
+          },
         ),
 
         title: Row(
@@ -37,6 +105,10 @@ class SearchScreenState extends State<SearchScreen> {
                 hintText: 'Chairs',
                 prefixIcon: Icons.search,
                 iconColor: AppColors.kGrey,
+                controller: searchController,
+                onChanged: (value) {
+                  setState(() {});
+                },
               ),
             ),
           ],
@@ -171,126 +243,48 @@ class SearchScreenState extends State<SearchScreen> {
 
               SizedBox(height: 30.h),
 
-              Row(
-                children: [
-                  ProductSecondCard(
-                    path: 'assets/images/product/best_seller/product1.png',
-                    title: 'Bentwood Chair',
-                    titleStyle: AppTextstyle.interRegular.copyWith(
-                      fontSize: 12.sp,
-                      height: 1.5,
-                      letterSpacing: 0.3,
-                    ),
-
-                    subTitle: '\$68.00',
-                    subTitleStyle: AppTextstyle.interMedium.copyWith(
-                      fontSize: 14.sp,
-                      height: 1.5,
-                      letterSpacing: 0.3,
+              if (filteredProducts.isEmpty)
+                Padding(
+                  padding: EdgeInsets.only(top: 50.h),
+                  child: Text(
+                    'No products found',
+                    style: AppTextstyle.interSemiBold.copyWith(
+                      fontSize: 16.sp,
+                      color: AppColors.kGrey,
                     ),
                   ),
-                  SizedBox(width: 10.w),
-
-                  ProductSecondCard(
-                    path: 'assets/images/product/best_seller/product2.png',
-                    title: 'Bentwood Chair',
-                    titleStyle: AppTextstyle.interRegular.copyWith(
-                      fontSize: 12.sp,
-                      height: 1.5,
-                      letterSpacing: 0.3,
-                    ),
-
-                    subTitle: '\$68.00',
-                    subTitleStyle: AppTextstyle.interMedium.copyWith(
-                      fontSize: 14.sp,
-                      height: 1.5,
-                      letterSpacing: 0.3,
-                    ),
+                )
+              else
+                GridView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: filteredProducts.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10.w,
+                    mainAxisSpacing: 22.h,
+                    childAspectRatio: 0.72,
                   ),
-                ],
-              ),
+                  itemBuilder: (context, index) {
+                    final product = filteredProducts[index];
 
-              SizedBox(height: 22.h),
-
-              Row(
-                children: [
-                  ProductSecondCard(
-                    path: 'assets/images/product/best_seller/product3.png',
-                    title: 'Bentwood Chair',
-                    titleStyle: AppTextstyle.interRegular.copyWith(
-                      fontSize: 12.sp,
-                      height: 1.5,
-                      letterSpacing: 0.3,
-                    ),
-
-                    subTitle: '\$68.00',
-                    subTitleStyle: AppTextstyle.interMedium.copyWith(
-                      fontSize: 14.sp,
-                      height: 1.5,
-                      letterSpacing: 0.3,
-                    ),
-                  ),
-                  SizedBox(width: 10.w),
-
-                  ProductSecondCard(
-                    path: 'assets/images/product/best_seller/product4.png',
-                    title: 'Bentwood Chair',
-                    titleStyle: AppTextstyle.interRegular.copyWith(
-                      fontSize: 12.sp,
-                      height: 1.5,
-                      letterSpacing: 0.3,
-                    ),
-
-                    subTitle: '\$68.00',
-                    subTitleStyle: AppTextstyle.interMedium.copyWith(
-                      fontSize: 14.sp,
-                      height: 1.5,
-                      letterSpacing: 0.3,
-                    ),
-                  ),
-                ],
-              ),
-
-              SizedBox(height: 22.h),
-
-              Row(
-                children: [
-                  ProductSecondCard(
-                    path: 'assets/images/product/best_seller/product5.png',
-                    title: 'Bentwood Chair',
-                    titleStyle: AppTextstyle.interRegular.copyWith(
-                      fontSize: 12.sp,
-                      height: 1.5,
-                      letterSpacing: 0.3,
-                    ),
-
-                    subTitle: '\$68.00',
-                    subTitleStyle: AppTextstyle.interMedium.copyWith(
-                      fontSize: 14.sp,
-                      height: 1.5,
-                      letterSpacing: 0.3,
-                    ),
-                  ),
-                  SizedBox(width: 10.w),
-
-                  ProductSecondCard(
-                    path: 'assets/images/product/best_seller/product6.png',
-                    title: 'Bentwood Chair',
-                    titleStyle: AppTextstyle.interRegular.copyWith(
-                      fontSize: 12.sp,
-                      height: 1.5,
-                      letterSpacing: 0.3,
-                    ),
-
-                    subTitle: '\$68.00',
-                    subTitleStyle: AppTextstyle.interMedium.copyWith(
-                      fontSize: 14.sp,
-                      height: 1.5,
-                      letterSpacing: 0.3,
-                    ),
-                  ),
-                ],
-              ),
+                    return ProductSecondCard(
+                      path: product['path']!,
+                      title: product['title']!,
+                      titleStyle: AppTextstyle.interRegular.copyWith(
+                        fontSize: 12.sp,
+                        height: 1.5,
+                        letterSpacing: 0.3,
+                      ),
+                      subTitle: product['price']!,
+                      subTitleStyle: AppTextstyle.interMedium.copyWith(
+                        fontSize: 14.sp,
+                        height: 1.5,
+                        letterSpacing: 0.3,
+                      ),
+                    );
+                  },
+                ),
             ],
           ),
         ),
