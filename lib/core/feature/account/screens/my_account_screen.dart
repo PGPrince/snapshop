@@ -4,6 +4,8 @@ import 'package:snapshop/core/common_widgets/buttons/custom_icon_button.dart';
 import 'package:snapshop/core/common_widgets/buttons/custom_text_button.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
+import 'package:snapshop/core/feature/home/screens/home_screen.dart';
+import 'package:snapshop/core/route/route_names.dart';
 
 class MyAccountScreen extends StatefulWidget {
   const MyAccountScreen({super.key});
@@ -23,7 +25,10 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
           icon: Icons.arrow_back,
           color: AppColors.kBlack,
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pushReplacementNamed(
+              context,
+              RouteNames.customNavigationBar,
+            );
           },
         ),
         centerTitle: true,
@@ -56,24 +61,39 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
                 icon: Icons.person,
                 title: 'Account Details',
                 subtitle: 'Edit your account information',
+                onTap: () {
+                  Navigator.pushNamed(context, RouteNames.accountInfoScreen);
+                },
               ),
               Divider(color: AppColors.kLightGrey, thickness: 1),
               _buildCard(
                 icon: Icons.credit_card,
                 title: 'Payment Method',
                 subtitle: 'Add your credit or debit card',
+                onTap: () {
+                  Navigator.pushNamed(context, RouteNames.paymentMethodScreen);
+                },
               ),
               Divider(color: AppColors.kLightGrey, thickness: 1),
               _buildCard(
                 icon: Icons.person,
-                title: 'Account Details',
-                subtitle: 'Edit your account information',
+                title: 'Delivery Addresses',
+                subtitle: 'Edit or add new address',
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    RouteNames.deliveryAddressScreen,
+                  );
+                },
               ),
               Divider(color: AppColors.kLightGrey, thickness: 1),
               _buildCard(
                 icon: Icons.credit_card,
-                title: 'Payment Method',
-                subtitle: 'Add your credit or debit card',
+                title: 'Security & Password',
+                subtitle: 'Edit your password',
+                onTap: () {
+                  Navigator.pushNamed(context, RouteNames.changePasswordScreen);
+                },
               ),
               Divider(color: AppColors.kLightGrey, thickness: 1),
               SizedBox(height: 10.h),
@@ -90,13 +110,45 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
                 icon: Icons.notifications_outlined,
                 title: 'Notifications',
                 subtitle: 'Mange your notifications',
+                onTap: () {
+                  Navigator.pushNamed(context, RouteNames.notificationsScreen);
+                },
               ),
               Divider(color: AppColors.kLightGrey, thickness: 1),
-              _buildCard(icon: Icons.language, title: 'Language'),
+              _buildCard(
+                icon: Icons.language,
+                title: 'Language',
+                onTap: () {
+                  Navigator.pushNamed(context, RouteNames.languageScreen);
+                },
+              ),
               Divider(color: AppColors.kLightGrey, thickness: 1),
-              _buildCard(icon: Icons.error_outline, title: 'Privacy & Policy '),
+              _buildCard(
+                icon: Icons.error_outline,
+                title: 'Terms & Condtions ',
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    RouteNames.termsAndConditionsScreen,
+                  );
+                },
+              ),
               Divider(color: AppColors.kLightGrey, thickness: 1),
-              _buildCard(icon: Icons.phone_outlined, title: 'Contact Us'),
+              _buildCard(
+                icon: Icons.help,
+                title: 'Help Center',
+                onTap: () {
+                  Navigator.pushNamed(context, RouteNames.helpCenterScreen);
+                },
+              ),
+              Divider(color: AppColors.kLightGrey, thickness: 1),
+              _buildCard(
+                icon: Icons.phone_outlined,
+                title: 'Contact Us',
+                onTap: () {
+                  Navigator.pushNamed(context, RouteNames.contactUsScreen);
+                },
+              ),
               Divider(color: AppColors.kLightGrey, thickness: 1),
 
               SizedBox(height: 20.h),
@@ -125,57 +177,61 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
     required IconData icon,
     required String title,
     final String? subtitle,
+    required VoidCallback onTap,
   }) {
     return Padding(
       padding: EdgeInsets.all(8.r),
-      child: SizedBox(
-        width: 327.w,
-        height: 43.h,
-        child: Row(
-          children: [
-            Container(
-              width: 40.w,
-              height: 40.h,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10000),
-                color: AppColors.kWhite,
-                border: Border.all(color: AppColors.kLightGrey),
-              ),
-              child: Icon(icon),
-            ),
-
-            SizedBox(width: 20.w),
-
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: AppTextstyle.interMedium.copyWith(
-                    fontSize: 14.sp,
-                    height: 1.5,
-                    letterSpacing: 0.3,
-                  ),
+      child: GestureDetector(
+        onTap: onTap,
+        child: SizedBox(
+          width: 327.w,
+          height: 43.h,
+          child: Row(
+            children: [
+              Container(
+                width: 40.w,
+                height: 40.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10000),
+                  color: AppColors.kWhite,
+                  border: Border.all(color: AppColors.kLightGrey),
                 ),
+                child: Icon(icon),
+              ),
 
-                if (subtitle != null)
+              SizedBox(width: 20.w),
+
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
                   Text(
-                    subtitle,
-                    style: AppTextstyle.interRegular.copyWith(
-                      fontSize: 12.sp,
+                    title,
+                    style: AppTextstyle.interMedium.copyWith(
+                      fontSize: 14.sp,
                       height: 1.5,
                       letterSpacing: 0.3,
-                      color: AppColors.kGrey,
                     ),
                   ),
-              ],
-            ),
 
-            const Spacer(),
+                  if (subtitle != null)
+                    Text(
+                      subtitle,
+                      style: AppTextstyle.interRegular.copyWith(
+                        fontSize: 12.sp,
+                        height: 1.5,
+                        letterSpacing: 0.3,
+                        color: AppColors.kGrey,
+                      ),
+                    ),
+                ],
+              ),
 
-            Icon(Icons.keyboard_arrow_right),
-          ],
+              const Spacer(),
+
+              Icon(Icons.keyboard_arrow_right),
+            ],
+          ),
         ),
       ),
     );
