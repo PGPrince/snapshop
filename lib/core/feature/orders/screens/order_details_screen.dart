@@ -5,6 +5,7 @@ import 'package:snapshop/core/common_widgets/buttons/custom_icon_button.dart';
 import 'package:snapshop/core/common_widgets/buttons/custom_text_button.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
+import 'package:snapshop/core/route/route_names.dart';
 
 class OrderDetailsScreen extends StatefulWidget {
   const OrderDetailsScreen({super.key});
@@ -26,6 +27,9 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
         leading: CustomIconButton(
           icon: Icons.arrow_back,
           color: AppColors.kBlack,
+          onPressed: () {
+            Navigator.pushReplacementNamed(context, RouteNames.ordersScreen);
+          },
         ),
         centerTitle: true,
         title: Text(
@@ -249,7 +253,9 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
               ),
               SizedBox(height: 20.h),
               CustomButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, RouteNames.trackOrderScreen);
+                },
                 title: 'Track Order',
                 textStyle: AppTextstyle.interSemiBold.copyWith(
                   fontSize: 16.sp,
