@@ -29,8 +29,13 @@ class ProductCard extends StatelessWidget {
         child: Stack(
           children: [
             ClipRRect(
-              borderRadius: BorderRadiusGeometry.circular(16.r),
-              child: Image.asset(path, width: 163.w, height: 217.h),
+              borderRadius: BorderRadius.circular(16.r),
+              child: Image.asset(
+                path,
+                width: 163.w,
+                height: 217.h,
+                fit: BoxFit.cover,
+              ),
             ),
 
             Positioned(
