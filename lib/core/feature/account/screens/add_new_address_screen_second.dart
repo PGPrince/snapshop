@@ -7,6 +7,7 @@ import 'package:snapshop/core/common_widgets/search_bar/custom_search_bar.dart';
 import 'package:snapshop/core/common_widgets/text_field/custom_text_field.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
+import 'package:snapshop/core/route/route_names.dart';
 
 class AddNewAddressScreenSecond extends StatefulWidget {
   const AddNewAddressScreenSecond({super.key});
@@ -29,6 +30,9 @@ class _AddNewAddressScreenSecondState extends State<AddNewAddressScreenSecond> {
         leading: CustomIconButton(
           icon: Icons.arrow_back,
           color: AppColors.kBlack,
+          onPressed: () {
+            Navigator.pushNamed(context, RouteNames.deliveryAddressScreen);
+          },
         ),
         title: Center(
           child: Text(
