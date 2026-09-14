@@ -5,6 +5,7 @@ import 'package:snapshop/core/common_widgets/buttons/custom_button.dart';
 import 'package:snapshop/core/common_widgets/buttons/custom_icon_button.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
+import 'package:snapshop/core/route/route_names.dart';
 
 class DeliveryAddressScreen extends StatefulWidget {
   const DeliveryAddressScreen({super.key});
@@ -37,6 +38,9 @@ class _DeliveryAddressScreenState extends State<DeliveryAddressScreen> {
         leading: CustomIconButton(
           icon: Icons.arrow_back,
           color: AppColors.kBlack,
+          onPressed: () {
+            Navigator.pushNamed(context, RouteNames.myAccountScreen);
+          },
         ),
         centerTitle: true,
         title: Text(
@@ -55,20 +59,29 @@ class _DeliveryAddressScreenState extends State<DeliveryAddressScreen> {
               padding: EdgeInsets.symmetric(vertical: 10.h),
               children: [
                 for (int index = 0; index < addresses.length; index++)
-                  CustomAddressCard(
-                    title: addresses[index]['title']!,
-                    address: addresses[index]['address']!,
-                    details: addresses[index]['details']!,
-                    isSelected: selectedAddressIndex == index,
-                    onTap: () {
-                      setState(() {
-                        if (selectedAddressIndex == index) {
-                          selectedAddressIndex = null;
-                        } else {
-                          selectedAddressIndex = index;
-                        }
-                      });
-                    },
+                  GestureDetector(
+                    onTap: () {},
+                    child: CustomAddressCard(
+                      onTapEdit: () {
+                        Navigator.pushNamed(
+                          context,
+                          RouteNames.addNewAddressScreenSecond,
+                        );
+                      },
+                      title: addresses[index]['title']!,
+                      address: addresses[index]['address']!,
+                      details: addresses[index]['details']!,
+                      isSelected: selectedAddressIndex == index,
+                      onTap: () {
+                        setState(() {
+                          if (selectedAddressIndex == index) {
+                            selectedAddressIndex = null;
+                          } else {
+                            selectedAddressIndex = index;
+                          }
+                        });
+                      },
+                    ),
                   ),
               ],
             ),
@@ -77,7 +90,9 @@ class _DeliveryAddressScreenState extends State<DeliveryAddressScreen> {
             width: 343.w,
             height: 56.h,
             borderRadius: 16.r,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, RouteNames.addNewAddressScreenFirst);
+            },
             title: 'Add New Address',
             textStyle: AppTextstyle.interSemiBold.copyWith(
               fontSize: 16.sp,
