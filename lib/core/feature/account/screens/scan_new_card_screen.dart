@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
+import 'package:snapshop/core/route/route_names.dart';
 
 class ScanNewCardScreen extends StatelessWidget {
   const ScanNewCardScreen({super.key});
@@ -78,7 +79,7 @@ class ScanNewCardScreen extends StatelessWidget {
 
             GestureDetector(
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pushNamed(context, RouteNames.addNewCardScreen);
               },
               child: Text(
                 'Cancel',
