@@ -9,6 +9,7 @@ class CustomAddressCard extends StatelessWidget {
   final String address;
   final String details;
   final VoidCallback onTap;
+  final VoidCallback onTapEdit;
 
   const CustomAddressCard({
     super.key,
@@ -17,6 +18,7 @@ class CustomAddressCard extends StatelessWidget {
     required this.address,
     required this.details,
     required this.onTap,
+    required this.onTapEdit,
   });
 
   @override
@@ -78,21 +80,24 @@ class CustomAddressCard extends StatelessWidget {
                 SizedBox(height: 12.h),
                 Row(
                   children: [
-                    Container(
-                      width: 217.w,
-                      height: 48.h,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16.r),
-                        border: Border.all(width: 1, color: AppColors.kGrey),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'Edit Address',
-                          style: AppTextstyle.interSemiBold.copyWith(
-                            fontSize: 12.sp,
-                            height: 1.5,
-                            letterSpacing: 0.3,
-                            color: AppColors.kGrey,
+                    GestureDetector(
+                      onTap: onTapEdit,
+                      child: Container(
+                        width: 217.w,
+                        height: 48.h,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16.r),
+                          border: Border.all(width: 1, color: AppColors.kGrey),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Edit Address',
+                            style: AppTextstyle.interSemiBold.copyWith(
+                              fontSize: 12.sp,
+                              height: 1.5,
+                              letterSpacing: 0.3,
+                              color: AppColors.kGrey,
+                            ),
                           ),
                         ),
                       ),
