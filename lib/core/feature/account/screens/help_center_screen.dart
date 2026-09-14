@@ -4,6 +4,7 @@ import 'package:snapshop/core/common_widgets/buttons/custom_icon_button.dart';
 import 'package:snapshop/core/common_widgets/category_filter/custom_category_filter.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
+import 'package:snapshop/core/route/route_names.dart';
 
 class HelpCenterScreen extends StatefulWidget {
   const HelpCenterScreen({super.key});
@@ -27,6 +28,9 @@ class _HelpCenterScreenState extends State<HelpCenterScreen> {
         leading: CustomIconButton(
           icon: Icons.arrow_back,
           color: AppColors.kBlack,
+          onPressed: () {
+            Navigator.pushNamed(context, RouteNames.myAccountScreen);
+          },
         ),
         centerTitle: true,
         title: Text(
