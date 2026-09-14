@@ -427,7 +427,9 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               ),
               SizedBox(height: 20.h),
               CustomButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, RouteNames.cartScreen);
+                },
                 title: 'Add to Card',
                 textStyle: AppTextstyle.interSemiBold.copyWith(
                   fontSize: 16.sp,
