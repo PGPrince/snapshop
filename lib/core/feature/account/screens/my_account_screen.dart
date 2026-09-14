@@ -95,6 +95,15 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
                 },
               ),
               Divider(color: AppColors.kLightGrey, thickness: 1),
+              _buildCard(
+                icon: Icons.receipt_long_outlined,
+                title: 'Order Details',
+                subtitle: 'See your orders',
+                onTap: () {
+                  Navigator.pushNamed(context, RouteNames.ordersScreen);
+                },
+              ),
+              Divider(color: AppColors.kLightGrey, thickness: 1),
               SizedBox(height: 10.h),
               Text(
                 'Setting',
