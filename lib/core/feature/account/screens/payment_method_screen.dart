@@ -4,6 +4,7 @@ import 'package:flutter_swiper_view/flutter_swiper_view.dart';
 import 'package:snapshop/core/common_widgets/buttons/custom_icon_button.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
+import 'package:snapshop/core/route/route_names.dart';
 
 class PaymentMethodScreen extends StatefulWidget {
   const PaymentMethodScreen({super.key});
@@ -106,7 +107,11 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                   Divider(color: AppColors.kDarkGrey, thickness: 1),
                   _buildPaymentCard(1),
                   Divider(color: AppColors.kDarkGrey, thickness: 1),
-                  _buildAddCard(),
+                  _buildAddCard(
+                    onTap: () {
+                      Navigator.pushNamed(context, RouteNames.addNewCardScreen);
+                    },
+                  ),
                 ],
               ),
             ),
@@ -116,47 +121,54 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
     );
   }
 
-  Widget _buildAddCard() {
-    return SizedBox(
-      height: 50.h,
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-        child: Row(
-          children: [
-            Icon(Icons.credit_card, size: 33.sp, color: AppColors.kWhite),
+  Widget _buildAddCard({required VoidCallback onTap}) {
+    return GestureDetector(
+      onTap: onTap,
+      child: SizedBox(
+        height: 50.h,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+          child: Row(
+            children: [
+              Icon(Icons.credit_card, size: 33.sp, color: AppColors.kWhite),
 
-            SizedBox(width: 20.w),
+              SizedBox(width: 20.w),
 
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Add Credit Card',
-                  style: AppTextstyle.interRegular.copyWith(
-                    fontSize: 14.sp,
-                    height: 1.2,
-                    letterSpacing: 0.3,
-                    color: AppColors.kWhite,
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Add Credit Card',
+                    style: AppTextstyle.interRegular.copyWith(
+                      fontSize: 14.sp,
+                      height: 1.2,
+                      letterSpacing: 0.3,
+                      color: AppColors.kWhite,
+                    ),
                   ),
-                ),
-                SizedBox(height: 1.h),
-                Text(
-                  'Add new credit or debit card',
-                  style: AppTextstyle.interRegular.copyWith(
-                    fontSize: 12.sp,
-                    height: 1.2,
-                    letterSpacing: 0.3,
-                    color: AppColors.kGrey,
+                  SizedBox(height: 1.h),
+                  Text(
+                    'Add new credit or debit card',
+                    style: AppTextstyle.interRegular.copyWith(
+                      fontSize: 12.sp,
+                      height: 1.2,
+                      letterSpacing: 0.3,
+                      color: AppColors.kGrey,
+                    ),
                   ),
-                ),
-              ],
-            ),
+                ],
+              ),
 
-            const Spacer(),
+              const Spacer(),
 
-            Icon(Icons.arrow_forward_ios, size: 16.sp, color: AppColors.kWhite),
-          ],
+              Icon(
+                Icons.arrow_forward_ios,
+                size: 16.sp,
+                color: AppColors.kWhite,
+              ),
+            ],
+          ),
         ),
       ),
     );
