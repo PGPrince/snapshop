@@ -46,6 +46,9 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
         leading: CustomIconButton(
           icon: Icons.arrow_back,
           color: AppColors.kBlack,
+          onPressed: () {
+            Navigator.pushNamed(context, RouteNames.myAccountScreen);
+          },
         ),
         centerTitle: true,
         title: Text(
