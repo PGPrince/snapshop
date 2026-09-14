@@ -49,6 +49,9 @@ class _AddNewCardScreenState extends State<AddNewCardScreen> {
         leading: CustomIconButton(
           icon: Icons.arrow_back,
           color: AppColors.kBlack,
+          onPressed: () {
+            Navigator.pushNamed(context, RouteNames.paymentMethodScreen);
+          },
         ),
         centerTitle: true,
         title: Text(
