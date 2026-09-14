@@ -40,7 +40,10 @@ class OnboardingScreenThree extends StatelessWidget {
                 SizedBox(height: 20.h),
                 CustomButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, RouteNames.loginScreen);
+                    Navigator.pushReplacementNamed(
+                      context,
+                      RouteNames.loginScreen,
+                    );
                   },
                   title: 'Get Started',
                   icon: Icon(
