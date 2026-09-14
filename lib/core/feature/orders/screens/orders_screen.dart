@@ -4,6 +4,7 @@ import 'package:snapshop/core/common_widgets/buttons/custom_icon_button.dart';
 import 'package:snapshop/core/common_widgets/buttons/custom_text_button.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
+import 'package:snapshop/core/route/route_names.dart';
 
 class OrdersScreen extends StatefulWidget {
   const OrdersScreen({super.key});
@@ -26,6 +27,9 @@ class _OrdersScreenState extends State<OrdersScreen> {
         leading: CustomIconButton(
           icon: Icons.arrow_back,
           color: AppColors.kBlack,
+          onPressed: () {
+            Navigator.pushNamed(context, RouteNames.myAccountScreen);
+          },
         ),
 
         title: Text(
@@ -149,6 +153,12 @@ class _OrdersScreenState extends State<OrdersScreen> {
                       code: '#GC092921',
                       amount: '\$1700',
                       dateAndTime: '22 Jun 2023 - 04:30 PM',
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          RouteNames.orderDetailsScreen,
+                        );
+                      },
                     ),
                     SizedBox(height: 20.h),
                     orderCard(
@@ -174,6 +184,12 @@ class _OrdersScreenState extends State<OrdersScreen> {
                       code: '#GC092921',
                       amount: '\$1700',
                       dateAndTime: '22 Jun 2023 - 04:30 PM',
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          RouteNames.orderDetailsScreen,
+                        );
+                      },
                     ),
                     SizedBox(height: 20.h),
                     orderCard(
@@ -206,6 +222,12 @@ class _OrdersScreenState extends State<OrdersScreen> {
                       code: '#GC092921',
                       amount: '\$1700',
                       dateAndTime: '22 Jun 2023 - 04:30 PM',
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          RouteNames.orderDetailsScreen,
+                        );
+                      },
                     ),
                   ],
                 ),
@@ -223,99 +245,103 @@ class _OrdersScreenState extends State<OrdersScreen> {
     required String dateAndTime,
     required String code,
     required String amount,
+    required VoidCallback onTap,
   }) {
-    return Container(
-      width: 330.w,
-      height: 203.h,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(width: 1, color: AppColors.kLightGrey),
-      ),
-      child: Padding(
-        padding: EdgeInsets.all(20.r),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                CustomTextButton(
-                  width: 90,
-                  height: 30,
-                  backgroundColor: backgroundColor,
-                  title: buttonTitle,
-                  textStyle: AppTextstyle.interBold.copyWith(
-                    fontSize: 12.sp,
-                    color: textColor,
-                  ),
-                  onPressed: () {},
-                ),
-                SizedBox(width: 50.w),
-                Row(
-                  children: icons.map((item) {
-                    return Padding(
-                      padding: EdgeInsets.only(left: 8.w),
-                      child: Container(
-                        width: 30.w,
-                        height: 30.w,
-                        decoration: BoxDecoration(
-                          color: item.backgroundColor,
-                          borderRadius: BorderRadius.circular(15.r),
-                        ),
-                        child: Icon(
-                          item.icon,
-                          size: 15.sp,
-                          color: item.iconColor,
-                        ),
-                      ),
-                    );
-                  }).toList(),
-                ),
-              ],
-            ),
-            SizedBox(height: 20.h),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  code,
-                  style: AppTextstyle.interRegular.copyWith(
-                    fontSize: 12.sp,
-                    height: 1.5,
-                    letterSpacing: 0.3,
-                    color: AppColors.kGrey,
-                  ),
-                ),
-                SizedBox(height: 10.h),
-                Text(
-                  amount,
-                  style: AppTextstyle.interBold.copyWith(
-                    fontSize: 18.sp,
-                    height: 1.4,
-                    letterSpacing: 0.3,
-                  ),
-                ),
-                SizedBox(height: 2.h),
-                Row(
-                  children: [
-                    Text(
-                      dateAndTime,
-                      style: AppTextstyle.interRegular.copyWith(
-                        fontSize: 12.sp,
-                        height: 1.2,
-                        letterSpacing: 0.3,
-                        color: AppColors.kGrey,
-                      ),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 330.w,
+        height: 203.h,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(width: 1, color: AppColors.kLightGrey),
+        ),
+        child: Padding(
+          padding: EdgeInsets.all(20.r),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  CustomTextButton(
+                    width: 90,
+                    height: 30,
+                    backgroundColor: backgroundColor,
+                    title: buttonTitle,
+                    textStyle: AppTextstyle.interBold.copyWith(
+                      fontSize: 12.sp,
+                      color: textColor,
                     ),
-                    Spacer(),
-                    CustomIconButton(
-                      icon: Icons.keyboard_arrow_right,
+                    onPressed: () {},
+                  ),
+                  SizedBox(width: 50.w),
+                  Row(
+                    children: icons.map((item) {
+                      return Padding(
+                        padding: EdgeInsets.only(left: 8.w),
+                        child: Container(
+                          width: 30.w,
+                          height: 30.w,
+                          decoration: BoxDecoration(
+                            color: item.backgroundColor,
+                            borderRadius: BorderRadius.circular(15.r),
+                          ),
+                          child: Icon(
+                            item.icon,
+                            size: 15.sp,
+                            color: item.iconColor,
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20.h),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    code,
+                    style: AppTextstyle.interRegular.copyWith(
+                      fontSize: 12.sp,
+                      height: 1.5,
+                      letterSpacing: 0.3,
                       color: AppColors.kGrey,
                     ),
-                  ],
-                ),
-              ],
-            ),
-          ],
+                  ),
+                  SizedBox(height: 10.h),
+                  Text(
+                    amount,
+                    style: AppTextstyle.interBold.copyWith(
+                      fontSize: 18.sp,
+                      height: 1.4,
+                      letterSpacing: 0.3,
+                    ),
+                  ),
+                  SizedBox(height: 2.h),
+                  Row(
+                    children: [
+                      Text(
+                        dateAndTime,
+                        style: AppTextstyle.interRegular.copyWith(
+                          fontSize: 12.sp,
+                          height: 1.2,
+                          letterSpacing: 0.3,
+                          color: AppColors.kGrey,
+                        ),
+                      ),
+                      Spacer(),
+                      CustomIconButton(
+                        icon: Icons.keyboard_arrow_right,
+                        color: AppColors.kGrey,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
