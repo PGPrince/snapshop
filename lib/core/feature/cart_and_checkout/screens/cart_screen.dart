@@ -4,6 +4,7 @@ import 'package:snapshop/core/common_widgets/buttons/custom_button.dart';
 import 'package:snapshop/core/common_widgets/buttons/custom_icon_button.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
+import 'package:snapshop/core/route/route_names.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -26,6 +27,9 @@ class _CartScreenState extends State<CartScreen> {
         leading: CustomIconButton(
           icon: Icons.arrow_back,
           color: AppColors.kBlack,
+          onPressed: () {
+            Navigator.pushNamed(context, RouteNames.customNavigationBar);
+          },
         ),
         centerTitle: true,
         title: Text(
@@ -444,7 +448,9 @@ class _CartScreenState extends State<CartScreen> {
             ),
             Spacer(),
             CustomButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, RouteNames.checkoutScreen);
+              },
               title: 'Checkout',
               textStyle: AppTextstyle.interSemiBold,
               bgColor: AppColors.kBlack,
