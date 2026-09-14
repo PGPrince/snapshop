@@ -21,7 +21,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
       backgroundColor: AppColors.kWhite,
       appBar: AppBar(
         backgroundColor: AppColors.kWhite,
-
+        automaticallyImplyLeading: false,
         title: Text(
           'Wishlist',
           style: AppTextstyle.interBold.copyWith(
