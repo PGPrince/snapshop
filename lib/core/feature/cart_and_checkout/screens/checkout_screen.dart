@@ -4,7 +4,6 @@ import 'package:snapshop/core/common_widgets/buttons/custom_button.dart';
 import 'package:snapshop/core/common_widgets/buttons/custom_icon_button.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
-import 'package:snapshop/core/feature/cart_and_checkout/screens/add_new_address_screen.dart';
 import 'package:snapshop/core/route/route_names.dart';
 
 class CheckoutScreen extends StatefulWidget {
