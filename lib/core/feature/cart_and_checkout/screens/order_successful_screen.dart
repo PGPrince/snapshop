@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:snapshop/core/common_widgets/buttons/custom_button.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
+import 'package:snapshop/core/route/route_names.dart';
 
 class OrderSuccessfulScreen extends StatefulWidget {
   const OrderSuccessfulScreen({super.key});
@@ -26,7 +27,12 @@ class _OrderSuccessfulScreenState extends State<OrderSuccessfulScreen> {
           SizedBox(height: 50.h),
 
           CustomButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacementNamed(
+                context,
+                RouteNames.customNavigationBar,
+              );
+            },
             title: 'Continue Shopping',
             textStyle: AppTextstyle.interSemiBold.copyWith(
               fontSize: 16.sp,
