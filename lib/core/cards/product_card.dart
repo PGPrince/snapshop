@@ -8,6 +8,7 @@ class ProductCard extends StatelessWidget {
   final String subTitle;
   final TextStyle titleStyle;
   final TextStyle subTitleStyle;
+  final VoidCallback onTap;
   const ProductCard({
     super.key,
     required this.path,
@@ -15,77 +16,81 @@ class ProductCard extends StatelessWidget {
     required this.subTitle,
     required this.titleStyle,
     required this.subTitleStyle,
+    required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 163.w,
-      height: 217.h,
-      child: Stack(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadiusGeometry.circular(16.r),
-            child: Image.asset(path, width: 163.w, height: 217.h),
-          ),
-
-          Positioned(
-            right: 12,
-            top: 12,
-            child: Container(
-              width: 30.w,
-              height: 30.h,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15.r),
-                color: AppColors.kBlack,
-              ),
-              child: Icon(
-                Icons.favorite_outline,
-                color: AppColors.kWhite,
-                size: 16,
-              ),
+    return GestureDetector(
+      onTap: onTap,
+      child: SizedBox(
+        width: 163.w,
+        height: 217.h,
+        child: Stack(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadiusGeometry.circular(16.r),
+              child: Image.asset(path, width: 163.w, height: 217.h),
             ),
-          ),
 
-          Positioned(
-            left: 12,
-            bottom: 10,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: titleStyle,
-                  // style: titleStyle
+            Positioned(
+              right: 12,
+              top: 12,
+              child: Container(
+                width: 30.w,
+                height: 30.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15.r),
+                  color: AppColors.kBlack,
                 ),
-                Text(
-                  subTitle,
-                  style: subTitleStyle,
-                  // style: subTitleStyle
+                child: Icon(
+                  Icons.favorite_outline,
+                  color: AppColors.kWhite,
+                  size: 16,
                 ),
-              ],
+              ),
             ),
-          ),
 
-          Positioned(
-            right: 12,
-            bottom: 12,
-            child: Container(
-              width: 30.w,
-              height: 30.h,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: AppColors.kBlack,
-              ),
-              child: Icon(
-                Icons.shopping_bag_outlined,
-                color: AppColors.kWhite,
-                size: 18,
+            Positioned(
+              left: 12,
+              bottom: 10,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: titleStyle,
+                    // style: titleStyle
+                  ),
+                  Text(
+                    subTitle,
+                    style: subTitleStyle,
+                    // style: subTitleStyle
+                  ),
+                ],
               ),
             ),
-          ),
-        ],
+
+            Positioned(
+              right: 12,
+              bottom: 12,
+              child: Container(
+                width: 30.w,
+                height: 30.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: AppColors.kBlack,
+                ),
+                child: Icon(
+                  Icons.shopping_bag_outlined,
+                  color: AppColors.kWhite,
+                  size: 18,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
