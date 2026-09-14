@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:snapshop/core/cards/product_card.dart';
 import 'package:snapshop/core/common_widgets/category_filter/custom_category_filter.dart';
-import 'package:snapshop/core/common_widgets/navigation_bar/custom_navigation_bar.dart';
 import 'package:snapshop/core/common_widgets/search_bar/custom_search_bar.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
@@ -321,7 +320,6 @@ class HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-            CustomNavigationBar(),
           ],
         ),
       ),
