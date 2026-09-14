@@ -5,6 +5,7 @@ import 'package:snapshop/core/common_widgets/buttons/custom_icon_button.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
 import 'package:snapshop/core/feature/cart_and_checkout/screens/add_new_address_screen.dart';
+import 'package:snapshop/core/route/route_names.dart';
 
 class CheckoutScreen extends StatefulWidget {
   const CheckoutScreen({super.key});
@@ -57,14 +58,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   Spacer(),
                   CustomIconButton(
                     onPressed: () async {
-                      final result = await Navigator.push(
+                      final result = await Navigator.pushNamed(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => const AddNewAddressScreen(),
-                        ),
+                        RouteNames.addNewAddressScreen,
                       );
 
-                      if (result != null) {
+                      if (result != null && result is Map<String, dynamic>) {
                         setState(() {
                           selectedAddress = result['description'];
                           selectedPostalCode = result['postalCode'];
@@ -496,7 +495,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   ),
                   Spacer(),
                   CustomButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(
+                        context,
+                        RouteNames.orderSuccessfulScreen,
+                      );
+                    },
                     width: 200.w,
                     height: 56,
 
