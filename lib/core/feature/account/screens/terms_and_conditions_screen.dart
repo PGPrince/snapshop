@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:snapshop/core/common_widgets/buttons/custom_icon_button.dart';
 import 'package:snapshop/core/constants/app_colors.dart';
 import 'package:snapshop/core/constants/app_textstyle.dart';
+import 'package:snapshop/core/route/route_names.dart';
 
 class TermsAndConditionsScreen extends StatelessWidget {
   const TermsAndConditionsScreen({super.key});
@@ -10,10 +11,15 @@ class TermsAndConditionsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.kWhite,
       appBar: AppBar(
+        backgroundColor: AppColors.kWhite,
         leading: CustomIconButton(
           icon: Icons.arrow_back,
           color: AppColors.kBlack,
+          onPressed: () {
+            Navigator.pushNamed(context, RouteNames.myAccountScreen);
+          },
         ),
         centerTitle: true,
         title: Text(
