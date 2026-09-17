@@ -48,7 +48,7 @@ class _AddNewAddressScreenFirstState extends State<AddNewAddressScreenFirst> {
   }
 
   void getSuggession(String input) async {
-    String kPLACES_API_KEY = '***REMOVED***';
+    String kPLACES_API_KEY = 'add your google api key';
     String baseURL =
         'https://maps.googleapis.com/maps/api/place/autocomplete/json';
     String request =
