@@ -66,7 +66,7 @@ class _AddNewAddressScreenFirstState extends State<AddNewAddressScreenFirst> {
   }
 
   Future<Map<String, String>> getPlaceDetails(String placeId) async {
-    String kPLACES_API_KEY = '***REMOVED***';
+    String kPLACES_API_KEY = 'add your own google map api key';
 
     String baseURL = 'https://maps.googleapis.com/maps/api/place/details/json';
 

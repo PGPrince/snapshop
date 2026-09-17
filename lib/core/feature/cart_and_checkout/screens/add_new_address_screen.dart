@@ -47,7 +47,7 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
   }
 
   void getSuggession(String input) async {
-    String kPLACES_API_KEY = '***REMOVED***';
+    String kPLACES_API_KEY = 'add your own google map api key';
     String baseURL =
         'https://maps.googleapis.com/maps/api/place/autocomplete/json';
     String request =
@@ -65,7 +65,7 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
   }
 
   Future<Map<String, String>> getPlaceDetails(String placeId) async {
-    String kPLACES_API_KEY = '***REMOVED***';
+    String kPLACES_API_KEY = 'add your own google map api key';
 
     String baseURL = 'https://maps.googleapis.com/maps/api/place/details/json';
 

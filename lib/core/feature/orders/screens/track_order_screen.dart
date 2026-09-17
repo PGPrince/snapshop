@@ -37,7 +37,7 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
 
   void getPolyPoints() async {
     PolylinePoints polylinePoints = PolylinePoints(
-      apiKey: '***REMOVED***',
+      apiKey: 'add your own google map api key',
     );
 
     PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
